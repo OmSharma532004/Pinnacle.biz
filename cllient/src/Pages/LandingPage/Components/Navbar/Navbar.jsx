@@ -94,11 +94,11 @@ const Navbar = () => {
         <ul className='app__navbar-links'>   
 
           <li className='app__flex p-text'>
-            <a href='#'>Employers</a>
+            <a href='#'>Employer</a>
 
           </li>
           <li className='app__flex p-text'>
-            <a href='#'>Candidates</a>
+            <a href='#'>Candidate</a>
           </li>
 
           <li className='app__flex p-text'>
