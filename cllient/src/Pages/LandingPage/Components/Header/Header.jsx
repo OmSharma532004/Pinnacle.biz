@@ -31,12 +31,12 @@ const Header = () => {
           <header className="header">
                         
             <h1 className="headline head-text">
-              Everything People
+            Pinnacle Solutions
               <span>
                 <Typewriter
       
                   options={{
-                    strings: ['People. Solutions. Success.'],
+                    strings: ['Everything People'],
                     autoStart: true,
                     loop: true,
                   }}
@@ -47,17 +47,12 @@ const Header = () => {
 
             <p className="subheadline">
 
-            A robust team of HR professionals that understand business needs, objectives and
-            the ever-changing demands of the market.
+            A dedicated team of professionals who grasp business needs, objectives and the evolving market demands.
             </p>
             <p className='header-content'>
-            Pinnacle is a pioneering e-commerce and omni-channel solutions provider, delivering customized, 
-            high-quality services. Our expert HR team offers comprehensive 360-degree solutions aligned with 
-            clients' visions and business objectives. With over 50 satisfied clients and thousands of professionals placed globally, 
-            we excel in consulting, advisory services, and building your dream team. Trust Pinnacle to help you achieve your business goals.
-            </p>
+            Pinnacle is a leading service provider for "everything people" , offering tailored and high-quality custom services. Our skilled consulting team delivers comprehensive 360-degree solutions aligned with clients' visions and business goals. With over 100+ satisfied clients and thousands of professionals placed worldwide, we excel in consulting, advisory services, market research, career advisory services, RPO services, contract staffing and team building.  </p>
 
-
+           <p className=" text-xl mb-4 ">Trust Pinnacle to help you achieve your business objectives.</p>
             <div className='header-buttons'>
               <Link to='/signup'
                 rel="noreferrer"              

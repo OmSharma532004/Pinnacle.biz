@@ -72,14 +72,14 @@ const Navbar = () => {
         </div>
         
         <div className="left">
-          <div className="app__navbar-logo">
+          <div className=" w-[100px] app__navbar-logo">
             <img src={logo} alt="logo" />
           </div>
-          <Link to="/">
+          {/* <Link to="/">
             <h1 className="font-semibold text-xl tracking-tight ml-3 lg:ml-0">
-              Pinnacle.biz
+            Pinnacle Solutions
             </h1>
-          </Link>
+          </Link> */}
 {/* 
           <ul className='app__navbar-links'> 
            
@@ -94,16 +94,17 @@ const Navbar = () => {
         <ul className='app__navbar-links'>   
 
           <li className='app__flex p-text'>
-            <a href='#home'>Home</a>
+            <a href='#'>Employers</a>
+            
+          </li>
+          <li className='app__flex p-text'>
+            <a href='#'>Candidates</a>
           </li>
 
           <li className='app__flex p-text'>
-            <a href='#about'>About Us</a>
+            <a href='#about'>About</a>
           </li>
 
-          <li className='app__flex p-text'>
-            <a href='#work'>Services</a>
-          </li>
 
           <li className='app__flex p-text'>
             <a href='#contact'>Contact</a>

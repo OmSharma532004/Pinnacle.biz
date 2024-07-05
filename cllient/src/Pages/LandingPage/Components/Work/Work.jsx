@@ -120,7 +120,7 @@ const Work = () => {
   return (
     <>
 
-      <h2 className='head-text' style={{marginTop:"0.75rem"}}>Transform Your<span> Business </span>With Our <span>Services</span> </h2>
+      <h2 className='head-text' style={{marginTop:"0.75rem"}}><span>Our Services </span></h2>
     
       <div className='app__work-filter'>
         {['Recruiting and More', 'Premium Job Search Assistance', 'Business Solutions', 'Advisory Services'].map((item, index) => (
