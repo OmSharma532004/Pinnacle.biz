@@ -112,7 +112,7 @@ const Footer = () => {
             <img src={logo} alt="Company Logo" className="mb-4" style={{ width: '150px' }} />
           <p className="">If you have any questions or inquiries, feel free to reach out to us!</p>
           <p className="">Email: contact@pinnacle.biz</p>
-          <p className="">Phone: +1 123 456 7890</p>
+          <p className="">Phone: +91 844 7777 213</p>
           <SocialMedia />
           
         </div>

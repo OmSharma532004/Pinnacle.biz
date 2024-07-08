@@ -94,13 +94,15 @@ const Navbar = () => {
         
         <div className="left">
           <div className="app__navbar-logo">
+         <Link to="/">
             <img src={logo} alt="logo" />
+          </Link>
           </div>
-          <Link to="/">
+          {/* <Link to="/">
             <h1 className="font-semibold text-xl tracking-tight  ml-3 lg:ml-0">
               Pinnacle.biz
             </h1>
-          </Link>
+          </Link> */}
 
           <ul className='app__navbar-links'>  
 

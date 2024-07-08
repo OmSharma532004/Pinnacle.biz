@@ -17,27 +17,18 @@ const About = () => {
   return (
     <>
   
-      <h2 className='head-text'>Boost <span>Visibility,</span> Land <br />Your 
-      job <span>Choose Us</span></h2>
+     <div className=' flex flex-col w-[80%]  items-center justify-center '>
+     <h2 className='text-5xl text-center font-semibold    '>Boost <span>Visibility,</span> <span>Choose  Us  </span> And  </h2>
+     <b className=' font-semibold text-5xl mt-5  text-[#B1C000]'>Elevate</b>
   
-      <div className='app__profiles'>
-        {abouts.map((about, index) => (
-          <motion.div
-            whileInView={{opacity:1}}
-            whileHover={{scale:1.1}}
-            transition={{duration:0.65, type: 'tween'}}
-            className='app__profile-item'
-            key={about.title + index}
-          >
-            <img src={about.imgUrl} alt={about.title} />
-            <h2 className="bold-text" style={{ marginTop: 20 }}>{about.title}</h2>
-            <p className="p-text" style={{ marginTop: 10 }}>{about.description}</p>
-
-
-
-          </motion.div>
-        ))}
-      </div>
+  <div className=' w-[70%] mt-[100px] text-xl text-gray-500  '>
+  In the face of organizational restructuring, even the most seasoned professionals can find
+themselves facing unexpected career transitions. Pinnacle's ELEVATE Program is here to turn
+this challenging period into a transformative opportunity. Designed specifically for middle and
+senior-level candidates, our comprehensive outplacement services provide the support you need
+to secure a role that aligns with your skills and career aspirations.
+  </div>
+     </div>
 
     </>
   )

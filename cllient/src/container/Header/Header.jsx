@@ -50,10 +50,14 @@ const Header = () => {
               Set Yourself Apart and Achieve Your Career Goals with Our Support
             </p>
             <p className='header-content'>
-            At Pinnacle, we provide a wide range of job assistance services aimed at boosting your career.
-            From revamping your resume professionally to offering personalised job counselling, our team is dedicated to helping you shine in a competitive job landscape and reach your career aspirations.
-            Whether you're aiming for your dream job, transitioning careers or seeking to refine your job search strategy, our customised services are geared towards ensuring your success.
-            </p>
+Pinnacle is a well-established talent acquisition, talent management, and executive search firm
+with over 14 years of experience. We have successfully partnered with hundreds of companies
+and assisted thousands of candidates across three continents, working with organizations of all
+sizes—from bootstrapped startups to growth-phase firms and unicorns.
+Our expertise lies in connecting top-tier talent with leading organizations, offering
+comprehensive 360-degree talent solutions. We are at the cutting edge of emerging industry
+trends, and our team comprises some of the best minds in the business, bringing a wealth of
+global experience to our clients.</p>
 
 
             <div className='header-buttons'>

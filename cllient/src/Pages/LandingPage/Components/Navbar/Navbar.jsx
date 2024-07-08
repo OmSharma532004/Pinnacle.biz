@@ -1,123 +1,77 @@
-import { useState, useEffect } from "react";
-import {HiMenuAlt4, HiX} from "react-icons/hi"
-// import { useSelector, useDispatch } from "react-redux";
-// import { logout } from "../../store/slices/authSlice";
-// import axios from "axios";
-import "./Navbar.scss";
-import { Link } from 'react-router-dom';
+import { useState } from "react";
+import { HiMenuAlt4, HiX } from "react-icons/hi";
 import logo from "../../../../assets/logo.webp";
 
-
 const Navbar = () => {
-  // const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
-  // const dispatch = useDispatch();
-  // const user = JSON.parse(localStorage.getItem("user"));
-  // useEffect(() => {
-  //   if (!isLoggedIn) {
-  //     localStorage.removeItem("user");
-  //     localStorage.removeItem("expiresIn");
-  //     dispatch(logout());
-  //   }
-  // }, [isLoggedIn]);
-
-  // const handleLogout = async () => {
-  //   try {
-  //     const response = await axios.get("/user/logout");
-
-  //     if (!response.ok) {
-  //       localStorage.removeItem("user");
-  //       localStorage.removeItem("expiresIn");
-  //       dispatch(logout());
-  //       window.location.reload();
-  //     }
-  //   } catch (error) {
-  //     localStorage.removeItem("user");
-  //     localStorage.removeItem("expiresIn");
-  //     dispatch(logout());
-  //   }
-  // };
   const [toggle, setToggle] = useState(false);
+
   return (
-    <>
-      
-      <nav className="app__navbar">
-        <div className='app__navbar-menu'>
-          <HiMenuAlt4 onClick={() => setToggle(true)} />
-          {toggle && (
-            <div>
-                <ul className='app__navbar-links'>   
+    <nav className="bg-white bg-opacity-70 p-4 fixed top-0 left-0 right-0 z-50 flex justify-between items-center">
+      <div className="flex items-center">
+        <img src={logo} alt="logo" className="w-[100px] h-[80px] mr-4" />
+      </div>
 
-                  <HiX onClick={() => setToggle(false)} />
+      <ul className="hidden md:flex space-x-12 text-gray-800">
+        <li className="relative group">
+          <a href="#" className="hover:text-gray-600">Employer</a>
+          <ul className="absolute left-1/2 transform -translate-x-1/2 top-6 hidden group-hover:flex flex-col bg-white text-gray-800 shadow-lg rounded-md w-56">
+            <li><a href="#" className="block px-4 py-2 hover:bg-green-200">Executive Search</a></li>
+            <li><a href="#" className="block px-4 py-2 hover:bg-green-200">Contingency Hiring</a></li>
+            <li><a href="#" className="block px-4 py-2 hover:bg-green-200">Retained Search</a></li>
+            <li><a href="#" className="block px-4 py-2 hover:bg-green-200">Contractual Hiring</a></li>
+            <li><a href="/hr360" className="block px-4 py-2 hover:bg-green-200">HR360</a></li>
+            <li><a href="#" className="block px-4 py-2 hover:bg-green-200">Research & Advisory</a></li>
+          </ul>
+        </li>
+        <li className="relative group">
+          <a href="#" className="hover:text-gray-600">Candidate</a>
+          <ul className="absolute left-1/2 transform -translate-x-1/2 top-6 hidden group-hover:flex flex-col bg-white text-gray-800 shadow-lg rounded-md w-56">
+            <li><a href="#" className="block px-4 py-2 hover:bg-green-200">Job Board</a></li>
+            <li><a href="#" className="block px-4 py-2 hover:bg-green-200">Submit your CV</a></li>
+            <li><a href="#" onClick={()=>{
+              window.location.href = "/elevate"
+            }} className="block px-4 py-2 hover:bg-green-200">ELEVATE</a></li>
+          </ul>
+        </li>
+        <li><a href="#about" className="hover:text-gray-600">About Us</a></li>
+        <li><a href="#contact" className="hover:text-gray-600">Contact</a></li>
+      </ul>
 
-                  <li className='app__flex p-text'>
-                    <a href='#home' onClick={() => setToggle(false)}>Home</a>
-                  </li>
-                  <li className='app__flex p-text'>
-                    <a href='#about' onClick={() => setToggle(false)}>About Us</a>
-                  </li>
-
-                  <li className='app__flex p-text'>
-                    <a href='#work' onClick={() => setToggle(false)}>Services</a>
-                  </li>
-
-                  <li className='app__flex p-text'>
-                    <a href='#contact' onClick={() => setToggle(false)}>Contact</a>
-                  </li>
-
-
-
-                </ul>
+      <div className="md:hidden">
+        <HiMenuAlt4 className="text-gray-800 text-2xl" onClick={() => setToggle(true)} />
+        {toggle && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-end">
+            <div className="bg-white bg-opacity-90 w-64 p-4">
+              <HiX className="text-gray-800 text-2xl mb-4" onClick={() => setToggle(false)} />
+              <ul className="space-y-4 text-gray-800">
+                <li className="relative group">
+                  <a href="#" className="hover:text-gray-600">Employer</a>
+                  <ul className="bg-white text-gray-800 mt-2 w-full shadow-lg rounded-md">
+                    <li><a href="#" className="block px-4 py-2 hover:bg-green-200">Executive Search</a></li>
+                    <li><a href="#" className="block px-4 py-2 hover:bg-green-200">Contingency Hiring</a></li>
+                    <li><a href="#" className="block px-4 py-2 hover:bg-green-200">Retained Search</a></li>
+                    <li><a href="#" className="block px-4 py-2 hover:bg-green-200">Contractual Hiring</a></li>
+                    <li><a href="/hr360" className="block px-4 py-2 hover:bg-green-200">HR360</a></li>
+                    <li><a href="#" className="block px-4 py-2 hover:bg-green-200">Research & Advisory</a></li>
+                  </ul>
+                </li>
+                <li className="relative group">
+                  <a href="#" className="hover:text-gray-600">Candidate</a>
+                  <ul className="bg-white text-gray-800 mt-2 w-full shadow-lg rounded-md">
+                    <li><a href="#" className="block px-4 py-2 hover:bg-green-200">Job Board</a></li>
+                    <li><a href="#" className="block px-4 py-2 hover:bg-green-200">Submit your CV</a></li>
+                    <li><a href="#" className="block px-4 py-2 hover:bg-green-200">ELEVATE</a></li>
+                  </ul>
+                </li>
+                <li><a href="#about" onClick={() => setToggle(false)} className="hover:text-gray-600">About Us</a></li>
+                <li><a href="#contact" onClick={() => setToggle(false)} className="hover:text-gray-600">Contact</a></li>
+              </ul>
             </div>
-          )}
-        </div>
-        
-        <div className="left">
-          <div className=" w-[100px] app__navbar-logo">
-            <img src={logo} alt="logo" />
           </div>
-          {/* <Link to="/">
-            <h1 className="font-semibold text-xl tracking-tight ml-3 lg:ml-0">
-            Pinnacle Solutions
-            </h1>
-          </Link> */}
-{/* 
-          <ul className='app__navbar-links'> 
-           
-            <li className='app__flex p-text'>
-              <Link to="/dashboard"></Link>
-            </li>
-              
-          </ul> */}
+        )}
+      </div>
+    </nav>
+  );
+};
 
-        </div>
-       
-        <ul className='app__navbar-links'>   
-
-          <li className='app__flex p-text'>
-            <a href='#'>Employer</a>
-
-          </li>
-          <li className='app__flex p-text'>
-            <a href='#'>Candidate</a>
-          </li>
-
-          <li className='app__flex p-text'>
-            <a href='#about'>About Us</a>
-          </li>
-
-
-          <li className='app__flex p-text'>
-            <a href='#contact'>Contact</a>
-          </li>
-
-        </ul>
-
-        
-
-      </nav>
-    </>
-
-  )
-}
-
-export default Navbar
+export default Navbar;

@@ -141,7 +141,7 @@ const Footer = () => {
               If you have any questions or inquiries, feel free to reach out to us!
             </p>
             <p>Email: contact@pinnacle.biz</p>
-            <p>Phone: +1 123 456 7890</p>
+            <p>Phone: +91 844 7777 213</p>
             <SocialMedia />
 
           </div>

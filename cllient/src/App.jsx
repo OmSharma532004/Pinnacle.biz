@@ -77,6 +77,7 @@ import Layout from "./Layout/Layout"
 import './App.scss'
 import { Routes, Route } from 'react-router-dom'
 import LandingPage from './Pages/LandingPage/LandingPage'
+import Elevate from "./Pages/Home/NewHome"
 
 const App = () => {
   return (
@@ -84,6 +85,7 @@ const App = () => {
 
     <Routes>
       <Route path="/" element={<LandingPage />} />
+      <Route path="/elevate" element={< Elevate/>} />
 
       <Route path="*" element={<Layout />} />
 
