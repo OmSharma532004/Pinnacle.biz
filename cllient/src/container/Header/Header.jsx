@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import Rocket from "../../assets/rocket.png"
 import handshake from "../../assets/handshake.png"
 import trophy from "../../assets/trophy.webp"
+import anchor from "../../assets/anchor.png"
 
 const scalevarients = {
   whileInView: {
@@ -30,7 +31,8 @@ const Header = () => {
 
           <header className="header">
                         
-            <h1 className="headline head-text">
+           <div className=" flex  md:mt-8 lg:mt-8 items-center  md:gap-[100px]">
+           <h1 className="headline head-text">
               Get Noticed,
               <span>
                 <Typewriter
@@ -44,6 +46,8 @@ const Header = () => {
               </span>
             
             </h1>
+            <img src={anchor} alt="profile" className="profile" width={100} />
+           </div>
 
             <p className="subheadline">
 

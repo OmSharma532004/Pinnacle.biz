@@ -12,7 +12,7 @@ async function hashPassword(password) {
 
 // Function to create admin user
 async function createAdminUser(username, email, password) {
-    const DB_URL = "mongodb+srv://kartikaggarwal2004:TBgi09oXQuArw37D@cluster0.llve40c.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+    const DB_URL = "mongodb+srv://Om:hYuaRrdVTJs3O9E5@cluster0.jczycur.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
     mongoose.connect(DB_URL);
     const db = mongoose.connection;
     db.on("error", console.error.bind(console, "connection error:"))

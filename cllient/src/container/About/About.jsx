@@ -5,6 +5,7 @@ import {images} from '../../constants'
 import {AppWrap,MotionWrap} from '../../Wrapper'
 import expertGuiadance from '../../assets/expertGuidance.png'
 import exp from 'constants'
+import anchor from "../../assets/anchor.png"
 
 const abouts = [
   {title: "Expert Guidance", description: "We'll work with you to define your career goals and identify the perfect job opportunities aligned with your skills and experience.", imgUrl: expertGuiadance},
@@ -18,8 +19,13 @@ const About = () => {
     <>
   
      <div className=' flex flex-col w-[80%]  items-center justify-center '>
-     <h2 className='text-5xl text-center font-semibold    '>Boost <span>Visibility,</span> <span>Choose  Us  </span> And  </h2>
-     <b className=' font-semibold text-5xl mt-5  text-[#B1C000]'>Elevate</b>
+    <div className=' flex flex-col items-center justify-center'>
+    <img src={anchor } alt="anchor" className="profile mb-8" width={100} />
+    <h2 className='text-5xl text-center font-semibold    '>Boost <span>Visibility,</span> <span>Choose  Us  </span> And  </h2>
+   <div className=' flex items-center justify-center'>
+   <b className=' font-semibold text-5xl mt-5  text-[#B1C000]'>Elevate</b>
+   </div>
+    </div>
   
   <div className=' w-[70%] mt-[100px] text-xl text-gray-500  '>
   In the face of organizational restructuring, even the most seasoned professionals can find

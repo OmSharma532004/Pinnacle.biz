@@ -3,12 +3,9 @@ import { AiFillEye, AiFillGithub } from 'react-icons/ai';
 import { motion } from 'framer-motion';
 import './Work.scss';
 import { AppWrap, MotionWrap } from '../../Wrapper';
+import { FaUserTie, FaNetworkWired, FaFileAlt, FaSearch, FaSmile } from 'react-icons/fa';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import resumeReview from '../../assets/resumeReview.png';
-import resumeMakeover from '../../assets/resumeMakeover.png';
-import jobCouncelling from '../../assets/jobCouncelling.png';
-import jobSearch from '../../assets/jobSearch.png';
 import { Link } from 'react-router-dom';
 
 const data = [
@@ -16,35 +13,35 @@ const data = [
     title: 'Personalized Hand-Holding Solutions',
     description:
       "At Pinnacle, we understand that each professional's journey is unique. Our Elevate Program offers customized support tailored to your individual needs and goals. From the initial consultation to landing your next role, our dedicated mentors will guide you every step of the way.",
-    imgUrl: resumeReview,
+    icon: <FaUserTie className="text-4xl text-[#B1C000]" />,
     tags: ['Personalized Hand-Holding Solutions'],
   },
   {
     title: 'Leveraging Our Extensive Network',
     description:
       'With a wealth of industry experience, Pinnacle has built a vast network of industry leaders, hiring managers, and top-tier organizations. By enrolling in the Elevate Program, you gain exclusive access to these critical connections, providing you with opportunities that align with your skills and ambitions.',
-    imgUrl: resumeMakeover,
+    icon: <FaNetworkWired className="text-4xl text-[#B1C000]" />,
     tags: ['Leveraging Our Extensive Network'],
   },
   {
     title: 'Professional CV and Social Profile Enhancement',
     description:
       "In today's competitive job market making a strong first impression is crucial. Our team of experts will help you craft a compelling CV and optimize your LinkedIn and social media profiles to ensure they highlight your strengths, achievements, and potential.",
-    imgUrl: jobCouncelling,
+    icon: <FaFileAlt className="text-4xl text-[#B1C000]" />,
     tags: ['Professional CV and Social Profile Enhancement'],
   },
   {
     title: 'Innovative Job Search Strategies',
     description:
       'We believe in thinking out of the box. Our team will introduce you to creative job search techniques and strategies, helping you uncover hidden job opportunities and secure positions that truly match your career goals.',
-    imgUrl: jobSearch,
+    icon: <FaSearch className="text-4xl text-[#B1C000]" />,
     tags: ['Innovative Job Search Strategies'],
   },
   {
     title: 'Psychological and Social Support',
     description:
       "We understand that switching jobs, can be a stressful and challenging time. Our program includes conditioning and coaching to help you navigate these challenges. We provide the tools and support to maintain your confidence and motivation during your job search.",
-    imgUrl: jobSearch,
+    icon: <FaSmile className="text-4xl text-[#B1C000]" />,
     tags: ['Psychological and Social Support'],
   },
 ];
@@ -116,11 +113,11 @@ const Work = () => {
 
   return (
     <>
-      <h2 className='head-text' style={{ marginTop: '0.75rem' }}>
-        Boost Your<span> Career </span>With Our <span>Services</span>
+      <h2 className='text-5xl font-bold text-center mb-8'>
+        Boost Your <span className="text-[#B1C000] ">Career</span> With Our <span className="text-[#B1C000]">Services</span>
       </h2>
 
-      <div className='app__work-filter'>
+      <div className='flex justify-center mb-8'>
         {[
           'Personalized Hand-Holding Solutions',
           'Leveraging Our Extensive Network',
@@ -131,8 +128,8 @@ const Work = () => {
           <div
             key={index}
             onClick={() => HandletworlFilter(item)}
-            className={`app__work-filter-item app__flex p-text ${
-              activeFilter === item ? 'item-active' : ''
+            className={`cursor-pointer px-4 py-2 m-2 text-sm rounded-lg ${
+              activeFilter === item ? 'bg-[#B1C000] text-white' : 'bg-gray-200 text-gray-700'
             }`}
           >
             {item}
@@ -140,32 +137,30 @@ const Work = () => {
         ))}
       </div>
 
-      <div className='app__work-portfolioArea'>
-        <div className='app__work-portfolioArea-left'>
-          <div className='icon' onClick={handleClick}>
-            <ArrowBackIosIcon />
-          </div>
+      <div className='flex items-center justify-center'>
+        <div className='flex items-center cursor-pointer' onClick={handleClick}>
+          <ArrowBackIosIcon />
         </div>
 
         <motion.div
           animate={animateCard}
           transition={{ duration: 0.5, delayChildren: 0.5 }}
-          className='app__work-portfolio'
+          className='flex overflow-hidden w-[80%]'
           style={{ transform: `translateX(${position}px)` }}
         >
           {filterWork.length && (
-            <div className='app__work-item app__flex'>
-              <div className='app__work-image app__flex'>
-                {work.imgUrl && <img src={work.imgUrl} alt={work.title} />}
+            <div className='flex flex-col items-center'>
+              <div className='flex justify-center mb-4'>
+                {work.icon}
               </div>
 
-              <div className='app__work-content app__flex'>
-                <h4 className='bold-text'>{work.title}</h4>
-                <p className='p-text' style={{ marginTop: 10 }}>
+              <div className='text-center'>
+                <h4 className='text-xl font-semibold'>{work.title}</h4>
+                <p className='mt-2 text-gray-600'>
                   {work.description}
                 </p>
 
-                <Link to='/signup' className='cta__button'>
+                <Link to='/signup' className='inline-block mt-4 px-4 py-2 bg-[#B1C000] text-white rounded-lg'>
                   Learn More
                 </Link>
               </div>
@@ -173,31 +168,16 @@ const Work = () => {
           )}
         </motion.div>
 
-        <div className='app__work-portfolioArea-right'>
-          <div className='icon' onClick={handleClickAfter}>
-            <ArrowForwardIosIcon />
-          </div>
-        </div>
-
-        <div className='app__work-mobileNav'>
-          <div className='app__work-mobileNav-left'>
-            <div className='icon' onClick={handleClick}>
-              <ArrowBackIosIcon />
-            </div>
-          </div>
-
-          <div className='icon' onClick={handleClickAfter}>
-            <ArrowForwardIosIcon />
-          </div>
+        <div className='flex items-center cursor-pointer' onClick={handleClickAfter}>
+          <ArrowForwardIosIcon />
         </div>
       </div>
 
-      <div className='app__work-indicator app__flex'>
-        {filterWork.map((work, index) => (
+      <div className='flex justify-center mt-8'>
+        {filterWork.map((_, index) => (
           <div
-            className='app__work-indiviual-indicator'
             key={index}
-            style={currentIndex === index ? { backgroundColor: '#B1C000' } : {}}
+            className={`w-2 h-2 mx-1 rounded-full ${currentIndex === index ? 'bg-[#B1C000]' : 'bg-gray-300'}`}
           ></div>
         ))}
       </div>
@@ -208,5 +188,5 @@ const Work = () => {
 export default AppWrap(
   MotionWrap(Work, 'app__works'),
   'work',
-  'app__primarybg'
+  'bg-white'
 );
