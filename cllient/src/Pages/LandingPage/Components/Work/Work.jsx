@@ -9,33 +9,38 @@ import resumeMakeover from '../../../../assets/resumeMakeover.png';
 import jobCouncelling from '../../../../assets/jobCouncelling.png';
 import jobSearch from '../../../../assets/jobSearch.png';
 import { Link } from 'react-router-dom';
+import i1 from '../../../Home/expect_img/6.png';
+import i2 from '../../../Home/expect_img/7.png';
+import i3 from '../../../Home/expect_img/8.png';
+import i4 from '../../../Home/expect_img/9.png';
+import i5 from '../../../Home/expect_img/10.png';
 
 const data = [
   {
     title: 'Recruiting and More',
     description: "At Pinnacle, we excel in Executive Search and Contingency Hiring, offering tailored solutions to meet your leadership needs. Our expert team rigorously identifies top talent, ensuring the perfect fit for your organization. From strategic leadership to project-specific hires, we deliver efficient recruitment solutions to propel your business forward.",
-    imgUrl: resumeReview,
+    imgUrl: i1,
     tags: ['Recruiting and More'],
     category: 'Employer',
   },
   {
     title: 'ELEVATE',
     description: 'At Pinnacle, we offer personalized job search assistance tailored to your career goals. Our expert team provides resume optimization, interview coaching, and strategic support, helping you navigate the job market confidently and discover the best opportunities for your professional journey.',
-    imgUrl: resumeMakeover,
+    imgUrl: i2,
     tags: ['ELEVATE'],
-    category: 'Employer',
+    category: 'Candidate',
   },
   {
     title: 'Business Solutions',
     description: "At Pinnacle Solutions, we help startups turn dreams into reality by finding like-minded professionals. Employees are your greatest assets, driving success. Over the past decade, we've partnered with passionate entrepreneurs and helped 50+ companies build dream teams, earning a reputation for excellence.",
-    imgUrl: jobCouncelling,
+    imgUrl: i3,
     tags: ['Business Solutions'],
-    category: 'Candidate',
+    category: 'Employer',
   },
   {
     title: 'Advisory Services',
     description: "At Pinnacle Solutions, we recognize that dynamic environments make forward-thinking essential. Succession planning is crucial for future preparedness. Our advisory services include organizational vision assessment, skills analysis, talent mapping, and retention programs. We offer these and more to ensure you stay ahead and achieve long-term success.",
-    imgUrl: jobSearch,
+    imgUrl: i5,
     tags: ['Advisory Services'],
     category: 'Candidate',
   },
@@ -118,7 +123,7 @@ const Work = () => {
           ))
         )}
         {category === 'Employer' && (
-          ['Recruiting and More', 'ELEVATE'].map((item, index) => (
+          ['Recruiting and More', 'Business Solutions'].map((item, index) => (
             <div
               key={index}
               onClick={() => handleFilterClick(item)}
@@ -129,7 +134,7 @@ const Work = () => {
           ))
         )}
         {category === 'Candidate' && (
-          ['Business Solutions', 'Advisory Services'].map((item, index) => (
+          [ 'Advisory Services','ELEVATE'].map((item, index) => (
             <div
               key={index}
               onClick={() => handleFilterClick(item)}

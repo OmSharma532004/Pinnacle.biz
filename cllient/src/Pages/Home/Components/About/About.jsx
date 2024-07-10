@@ -1,35 +1,39 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import "./About.scss";
-import { images } from '../../../../constants';
+import i1 from "../../expect_img/1.png";
+import i2 from "../../expect_img/2.png";
+import i3 from "../../expect_img/3.png";
+import i4 from "../../expect_img/4.png";
+import i5 from "../../expect_img/5.png";
 import { AppWrap, MotionWrap } from '../../../../Wrapper';
-import expertGuidance from '../../../../assets/expertGuidance.png';
+
 
 const abouts = [
   { 
     title: "Personalized Mentorship", 
     description: "One-on-one coaching sessions with seasoned mentors. Tailored advice and support to navigate your career transition.", 
-    imgUrl: expertGuidance 
+    imgUrl: i1 
   },
   { 
     title: "Network Access", 
     description: "Direct introductions to key industry contacts. Invitations to exclusive networking events and webinars.", 
-    imgUrl: images.about04 
+    imgUrl: i2
   },
   { 
     title: "Profile Optimization", 
     description: "Professional CV writing and review services. LinkedIn and social media profile enhancement.", 
-    imgUrl: images.about02 
+    imgUrl: i3
   },
   { 
     title: "Creative Job Search Support", 
     description: "Access to niche job boards and opportunities. Guidance on leveraging online and offline job search resources.", 
-    imgUrl: images.about02 
+    imgUrl: i4
   },
   { 
     title: "Psychological and Social Support", 
     description: "Coaching sessions to build resilience and confidence. Strategies to manage stress and maintain a positive outlook.", 
-    imgUrl: images.about02 
+    imgUrl: i5
   }
 ];
 

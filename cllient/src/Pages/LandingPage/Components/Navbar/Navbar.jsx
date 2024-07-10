@@ -27,7 +27,10 @@ const Navbar = () => {
           <a href="#" className="hover:text-gray-600">Candidate</a>
           <ul className="absolute left-1/2 transform -translate-x-1/2 top-6 hidden group-hover:flex flex-col bg-white text-gray-800 shadow-lg rounded-md w-56">
             <li><a href="#" className="block px-4 py-2 hover:bg-green-200">Job Board</a></li>
-            <li><a href="#" className="block px-4 py-2 hover:bg-green-200">Submit your CV</a></li>
+            <li><a href="#"
+            onClick={()=>{
+              window.location.href = "/signup"
+            }}  className="block px-4 py-2 hover:bg-green-200">Submit your CV</a></li>
             <li><a href="#" onClick={()=>{
               window.location.href = "/elevate"
             }} className="block px-4 py-2 hover:bg-green-200">ELEVATE</a></li>

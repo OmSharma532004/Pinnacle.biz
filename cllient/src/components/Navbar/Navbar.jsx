@@ -40,7 +40,7 @@ const Navbar = () => {
   return (
     <>
       
-      <nav className="app__navbar">
+      <nav className="app__navbar ">
         <div className='app__navbar-menu'>
           <HiMenuAlt4 onClick={() => setToggle(true)} />
           {toggle && (
@@ -93,7 +93,7 @@ const Navbar = () => {
         </div>
         
         <div className="left">
-          <div className="app__navbar-logo">
+          <div className="app__navbar-logo ml-[70px] md:ml-0 lg:ml-0">
          <Link to="/">
             <img src={logo} alt="logo" />
           </Link>

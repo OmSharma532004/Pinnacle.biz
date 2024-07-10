@@ -22,7 +22,7 @@ const scalevarients = {
 
 const Header = () => {
   return (
-    <div className='app__header app__flex' id="home">
+    <div className='app__header app__flex mt-[10px] md:mt-[0px]' id="home">
       <motion.div 
           whileInView={{x: [-100,0], opacity: [0,1]}}
           className='app__header-info'
@@ -31,18 +31,11 @@ const Header = () => {
 
           <header className="header">
                         
-           <div className=" flex  md:mt-8 lg:mt-8 items-center  md:gap-[100px]">
+           <div className=" flex  md:mt-8 lg:mt-8 items-center  md:gap-[240px]">
            <h1 className="headline head-text">
-              Get Noticed,
+           ELEVATE
               <span>
-                <Typewriter
-      
-                  options={{
-                    strings: ['Get Hired'],
-                    autoStart: true,
-                    loop: true,
-                  }}
-                />
+              <h4> Reach New Heights</h4>
               </span>
             
             </h1>

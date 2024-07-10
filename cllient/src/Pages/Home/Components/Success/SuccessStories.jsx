@@ -1,5 +1,7 @@
-import React from 'react';
-import "./SuccessStories.scss";
+import React, { useEffect, useRef } from 'react';
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const successStories = [
   { 
@@ -13,21 +15,45 @@ const successStories = [
 ];
 
 const SuccessStories = () => {
+  const sliderRef = useRef(null);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (sliderRef.current) {
+        sliderRef.current.slickNext();
+      }
+    }, 15000); // 15000 milliseconds = 15 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
   return (
-    <section className="success-stories">
-      <div className="container w-[100%]">
-        <h2 className="head-text"><span>Success Stories:</span></h2>
-        <div className=" flex items-center gap-4 justify-center w-[100%]">
-          {successStories.map((story, index) => (
-            <div className=" flex flex-col  p-4 md:h-[200px] shadow-lg justify-center gap-5" key={index}>
-              <h3 className=" text-3xl" style={{ color: "var(--secondary-color)" }}>{story.name}</h3>
-              <p className="text-lg">{story.story}</p>
-            </div>
-          ))}
+    <section className="bg-white ">
+      <div className="flex items-center justify-center flex-col mx-auto max-w-screen-lg px-4 sm:px-6 lg:px-8">
+        <h2 className="text-center text-3xl sm:text-4xl w-full text-[#B1C000] font-bold mb-4">
+          Success Stories
+        </h2>
+        <div className="w-full sm:w-[80%] bg-[#B1C000] rounded-xl p-8 sm:p-6">
+          <Slider ref={sliderRef} {...settings}>
+            {successStories.map((story, index) => (
+              <div className="p-2 h-auto text-center mx-auto flex flex-col justify-center items-center" key={index}>
+                <h3 className="text-xl sm:text-2xl text-white font-semibold text-center mb-4">{story.name}</h3>
+                <p className="text-base sm:text-lg text-white font-light text-center">{story.story}</p>
+              </div>
+            ))}
+          </Slider>
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 export default SuccessStories;
