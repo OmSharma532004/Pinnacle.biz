@@ -78,6 +78,9 @@ import './App.scss'
 import { Routes, Route } from 'react-router-dom'
 import LandingPage from './Pages/LandingPage/LandingPage'
 import Elevate from "./Pages/Home/NewHome"
+import JobFeed from "./components/JobFeed/Jobfeed"
+import JobDetails from "./components/JobFeed/JobDetails"
+import JobList from "./components/JobFeed/Jobfeed"
 
 const App = () => {
   return (
@@ -86,8 +89,9 @@ const App = () => {
     <Routes>
       <Route path="/" element={<LandingPage />} />
       <Route path="/elevate" element={< Elevate/>} />
-
+      <Route path="/jobs" element={<JobList />} />
       <Route path="*" element={<Layout />} />
+      <Route path="/job/:id" element={<JobDetails />} />
 
 
     </Routes>
