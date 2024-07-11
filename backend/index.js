@@ -28,7 +28,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser(process.env.COOKIE_SECRET));
 app.use(cors({
-    origin: ["http://localhost:5176", "http://localhost:5177", process.env.SITE_URL, process.env.ADMIN_URL,"https://pinnacle.biz","https://pinnacle.biz/login"],
+    origin: ["http://localhost:5173", "http://localhost:5174", process.env.SITE_URL, process.env.ADMIN_URL,"https://pinnacle.biz","https://pinnacle.biz/login"],
     credentials: true
 }));
 app.use(passport.initialize()); 
@@ -41,6 +41,8 @@ const adminRoute = require("./routes/adminRoute");
 app.use("/admin", adminRoute);
 const paymentRoute = require("./routes/paymentRoute");
 app.use("/payment", paymentRoute);
+const jobRoute = require("./routes/jobRoutes");
+app.use("/job", jobRoute);
 
 
 app.all("*", (req, res, next) => {

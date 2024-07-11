@@ -41,7 +41,8 @@ const Navbar = () => {
         {/* <Link to="/upload" className="navbar-link">Upload Resumes</Link> */}
         {/* {isLoggedIn && <Link to="/yourProfile" className="navbar-link">Your Profile</Link>} */}
          {/* {isLoggedIn && <Link to="/makeProfile" className="navbar-link">Make Your Profile</Link>} */}
-
+        <Link to="/alljobs" className="navbar-link">Jobs</Link>
+        <Link to="/createjob" className="navbar-link">Create Jobs</Link>
       </div>
       <div className="navbar-right">
         <div className="menu-icon" onClick={toggleMenu}>

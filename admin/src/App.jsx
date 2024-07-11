@@ -9,6 +9,9 @@ import PrivateRoutes from './utils/PrivateRoutes';
 import Home from './Pages/Home/Home';
 import CreatePlan from './Pages/CreatePlan/CreatePlan';
 import PlanStatus from './Pages/PlanStatus/PlanStatus';
+import JobForm from './Pages/CreateJob/CreateJob';
+import AdminJobs from './Pages/Jobs/AdminJobs';
+import EditJob from './Pages/Jobs/EditJobs';
 
 function App() {
 
@@ -26,6 +29,10 @@ function App() {
           <Route path="/categories" element={<Category />} />
           <Route path="/createplan" element={<CreatePlan />} /> 
           <Route path="/planstatus/:userId" element={<PlanStatus />} />
+          <Route path="/createjob" element={<JobForm />} />
+          <Route path="/allJobs" element={<AdminJobs/>} />
+          <Route path="/admin/edit/:id" element={<EditJob />} />
+
         </Route> 
       </Routes> 
 

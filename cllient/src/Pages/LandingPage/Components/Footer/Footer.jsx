@@ -183,7 +183,7 @@ const Footer = () => {
 
    </motion.div>
   </section>
-   <p>© 2024 Pinnacle.biz. All rights reserved.</p>
+   <p>© 2012 - 2024 Pinnacle Solutions, Pinnacle.biz, ELEVATE. hr360 ~ All rights reserved.</p>
 
 </>
   )

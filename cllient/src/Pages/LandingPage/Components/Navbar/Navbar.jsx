@@ -4,6 +4,8 @@ import logo from "../../../../assets/logo.webp";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
+  const [employerDropdown, setEmployerDropdown] = useState(false);
+  const [candidateDropdown, setCandidateDropdown] = useState(false);
 
   return (
     <nav className="bg-white bg-opacity-70 p-4 fixed top-0 left-0 right-0 z-50 flex justify-between items-center">
@@ -50,23 +52,34 @@ const Navbar = () => {
               <HiX className="text-gray-800 text-2xl mb-4" onClick={() => setToggle(false)} />
               <ul className="space-y-4 text-gray-800">
                 <li className="relative group">
-                  <a href="#" className="hover:text-gray-600">Employer</a>
-                  <ul className="bg-white text-gray-800 mt-2 w-full shadow-lg rounded-md">
-                    <li><a href="#" className="block px-4 py-2 hover:bg-green-200">Executive Search</a></li>
-                    <li><a href="#" className="block px-4 py-2 hover:bg-green-200">Contingency Hiring</a></li>
-                    <li><a href="#" className="block px-4 py-2 hover:bg-green-200">Retained Search</a></li>
-                    <li><a href="#" className="block px-4 py-2 hover:bg-green-200">Contractual Hiring</a></li>
-                    <li><a href="/hr360" className="block px-4 py-2 hover:bg-green-200">HR360</a></li>
-                    <li><a href="#" className="block px-4 py-2 hover:bg-green-200">Research & Advisory</a></li>
-                  </ul>
+                  <a href="#" onClick={() => setEmployerDropdown(!employerDropdown)} className="hover:text-gray-600">Employer</a>
+                  {employerDropdown && (
+                    <ul className="bg-white text-gray-800 mt-2 w-full shadow-lg rounded-md">
+                      <li><a href="#" className="block px-4 py-2 hover:bg-green-200">Executive Search</a></li>
+                      <li><a href="#" className="block px-4 py-2 hover:bg-green-200">Contingency Hiring</a></li>
+                      <li><a href="#" className="block px-4 py-2 hover:bg-green-200">Retained Search</a></li>
+                      <li><a href="#" className="block px-4 py-2 hover:bg-green-200">Contractual Hiring</a></li>
+                      <li><a href="#" className="block px-4 py-2 hover:bg-green-200">HR360</a></li>
+                      <li><a href="#" className="block px-4 py-2 hover:bg-green-200">Research & Advisory</a></li>
+                    </ul>
+                  )}
                 </li>
                 <li className="relative group">
-                  <a href="#" className="hover:text-gray-600">Candidate</a>
-                  <ul className="bg-white text-gray-800 mt-2 w-full shadow-lg rounded-md">
-                    <li><a href="#" className="block px-4 py-2 hover:bg-green-200">Job Board</a></li>
-                    <li><a href="#" className="block px-4 py-2 hover:bg-green-200">Submit your CV</a></li>
-                    <li><a href="#" className="block px-4 py-2 hover:bg-green-200">ELEVATE</a></li>
-                  </ul>
+                  <a href="#" onClick={() => setCandidateDropdown(!candidateDropdown)} className="hover:text-gray-600">Candidate</a>
+                  {candidateDropdown && (
+                    <ul className="bg-white text-gray-800 mt-2 w-full shadow-lg rounded-md">
+            <li><a href="#"  onClick={()=>{
+              window.location.href = "/jobs"
+            }}  className="block px-4 py-2 hover:bg-green-200">Job Board</a></li>
+                          <li><a href="#"
+            onClick={()=>{
+              window.location.href = "/signup"
+            }}  className="block px-4 py-2 hover:bg-green-200">Submit your CV</a></li>
+                      <li><a href="#" onClick={()=>{
+              window.location.href = "/elevate"
+            }} className="block px-4 py-2 hover:bg-green-200">ELEVATE</a></li>
+                    </ul>
+                  )}
                 </li>
                 <li><a href="#about" onClick={() => setToggle(false)} className="hover:text-gray-600">About Us</a></li>
                 <li><a href="#contact" onClick={() => setToggle(false)} className="hover:text-gray-600">Contact</a></li>
