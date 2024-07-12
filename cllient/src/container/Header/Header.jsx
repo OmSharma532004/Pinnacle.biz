@@ -31,7 +31,7 @@ const Header = () => {
 
           <header className="header">
                         
-           <div className=" flex  md:mt-8 lg:mt-8 items-center  md:gap-[240px]">
+           <div className=" flex  md:mt-8 lg:mt-8 items-center  md:gap-[40px]">
            <h1 className="headline head-text">
            ELEVATE
               <span>

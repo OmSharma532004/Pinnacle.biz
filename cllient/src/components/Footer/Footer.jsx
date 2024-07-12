@@ -146,6 +146,7 @@ const Footer = () => {
           )}
     </motion.div>
   </section>
+  <p className=' text-center bg-white mb-8 pt-4'>© 2012 - 2024 Pinnacle Solutions, Pinnacle.biz, ELEVATE. hr360 ~ All rights reserved.</p>
 
 </>
   )

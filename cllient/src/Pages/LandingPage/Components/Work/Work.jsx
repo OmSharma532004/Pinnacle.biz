@@ -29,24 +29,16 @@ const data = [
     category: 'Candidate',
   },
   {
-    title: 'Research and Advisory Services',
-    description: "At Pinnacle Solutions, we understand that changing environments and constant dynamism make forward-thinking essential. While you may be equipped for today, succession planning is crucial for future preparedness. Our advisory services encompass a comprehensive assessment of your organizational vision, skills analysis, talent mapping, and the development of retention programs. We provide all these services and more to help you stay ahead and ensure long-term success.",
+    title: 'Executive Search',
+    description: "Pinnacle specializes in finding exceptional executive talent to drive your business forward. With deep industry expertise and a personalized approach, we ensure that we connect you with leaders who align with your company's unique culture, values and strategic objectives. Our services include comprehensive leadership assessment, succession planning and market intelligence, enabling us to identify top-tier executives suited to your goals. Partner with Pinnacle to elevate your organization with the right leadership.     ",
     imgUrl: i5,
-    tags: ['Research and Advisory Services'],
+    tags: ['Executive Search'],
     category: 'Employee',
-  },
-  {
-    title: 'HR360',
-    description: "Pinnacle offers comprehensive HR 360 - Employer of Record (EOR) services designed to streamline your workforce management. As your trusted partner, we handle all aspects of employment compliance, payroll administration, benefits management, and HR administration, allowing you to focus on your core business activities. With our extensive expertise and commitment to compliance, we ensure smooth operations and seamless integration of personnel, whether you're expanding into new markets or enhancing operational efficiency. Partner with Pinnacle for reliable HR 360 EOR services that support your business growth and mitigate employment risks effectively.",
-    imgUrl: i3,
-    tags: ['HR360'],
-    category: 'Employee',
-  },
-  {
-    title: 'Retained Search',
-    description: "Pinnacle specializes in retained search services, dedicated to finding top-tier executive talent for your organization’s critical leadership roles. With our deep industry expertise and personalized approach, we conduct thorough searches to identify candidates who perfectly align with your company’s culture, values, and strategic vision. Our commitment to excellence and comprehensive assessment process ensure we deliver the highest caliber leaders to drive your business forward. Trust Pinnacle for reliable and effective retained search solutions that elevate your leadership team.    ",
-    imgUrl: i4,
-    tags: ['Retained Search'],
+  },  {
+    title: 'Contingency Hiring',
+    description: "Pinnacle excels in contingency hiring, swiftly connecting you with top talent to meet your immediate staffing needs. Our deep industry expertise and extensive network enable us to provide high-quality candidates who align with your company’s culture and requirements. With a focus on speed and efficiency, we leverage market intelligence and a comprehensive assessment process to ensure the best fit. Partner with Pinnacle for reliable contingency hiring solutions that keep your business moving forward.",
+    imgUrl: i7,
+    tags: ['Contingency Hiring'],
     category: 'Employee',
   },
   {
@@ -57,20 +49,28 @@ const data = [
     category: 'Employee',
   },
   {
-    title: 'Contingency Hiring',
-    description: "Pinnacle excels in contingency hiring, swiftly connecting you with top talent to meet your immediate staffing needs. Our deep industry expertise and extensive network enable us to provide high-quality candidates who align with your company’s culture and requirements. With a focus on speed and efficiency, we leverage market intelligence and a comprehensive assessment process to ensure the best fit. Partner with Pinnacle for reliable contingency hiring solutions that keep your business moving forward.",
-    imgUrl: i7,
-    tags: ['Contingency Hiring'],
+    title: 'Retained Search',
+    description: "Pinnacle specializes in retained search services, dedicated to finding top-tier executive talent for your organization’s critical leadership roles. With our deep industry expertise and personalized approach, we conduct thorough searches to identify candidates who perfectly align with your company’s culture, values, and strategic vision. Our commitment to excellence and comprehensive assessment process ensure we deliver the highest caliber leaders to drive your business forward. Trust Pinnacle for reliable and effective retained search solutions that elevate your leadership team.    ",
+    imgUrl: i4,
+    tags: ['Retained Search'],
     category: 'Employee',
   },
   {
-    title: 'Executive Search',
-    description: "Pinnacle specializes in finding exceptional executive talent to drive your business forward. With deep industry expertise and a personalized approach, we ensure that we connect you with leaders who align with your company's unique culture, values and strategic objectives. Our services include comprehensive leadership assessment, succession planning and market intelligence, enabling us to identify top-tier executives suited to your goals. Partner with Pinnacle to elevate your organization with the right leadership.     ",
-    imgUrl: i5,
-    tags: ['Executive Search'],
+    title: 'HR360',
+    description: "Pinnacle offers comprehensive HR 360 - Employer of Record (EOR) services designed to streamline your workforce management. As your trusted partner, we handle all aspects of employment compliance, payroll administration, benefits management, and HR administration, allowing you to focus on your core business activities. With our extensive expertise and commitment to compliance, we ensure smooth operations and seamless integration of personnel, whether you're expanding into new markets or enhancing operational efficiency. Partner with Pinnacle for reliable HR 360 EOR services that support your business growth and mitigate employment risks effectively.",
+    imgUrl: i3,
+    tags: ['HR360'],
     category: 'Employee',
   },
-  // ... other items
+  {
+    title: 'Research and Advisory Services',
+    description: "At Pinnacle Solutions, we understand that changing environments and constant dynamism make forward-thinking essential. While you may be equipped for today, succession planning is crucial for future preparedness. Our advisory services encompass a comprehensive assessment of your organizational vision, skills analysis, talent mapping, and the development of retention programs. We provide all these services and more to help you stay ahead and ensure long-term success.",
+    imgUrl: i5,
+    tags: ['Research and Advisory Services'],
+    category: 'Employee',
+  }
+
+
 ];
 
 const Work = () => {
@@ -145,7 +145,7 @@ const Work = () => {
           ))
         )}
         {category === 'Employee' && (
-          ['Research and Advisory Services', 'HR360', 'Retained Search', 'Contractual Hiring', 'Contingency Hiring', 'Executive Search'].map((item, index) => (
+          ['Executive Search', 'Contingency Hiring',, 'Contractual Hiring', 'Retained Search', 'HR360','Research and Advisory Services'].map((item, index) => (
             <div
               key={index}
               onClick={() => handleFilterClick(item)}
