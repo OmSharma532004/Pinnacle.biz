@@ -123,7 +123,7 @@ const Footer = () => {
 
             </div>
 
-            <div className='section'>
+            {/* <div className='section'>
               <h1>Our Services</h1>
               <ul>
                 <li><Link>Recruiting and More</Link></li>
@@ -132,7 +132,7 @@ const Footer = () => {
                 <li><Link>Business Solutions</Link></li>
               </ul>
 
-            </div>
+            </div> */}
           </div>
 
           <div className="pt-4">

@@ -128,7 +128,7 @@ const Work = () => {
           Candidate
         </div>
         <div className={`app__work-filter-item ${category === 'Employee' ? 'item-active' : ''}`} onClick={() => handleCategoryChange('Employee')}>
-          Employee
+          Employer
         </div>
       </div>
 
