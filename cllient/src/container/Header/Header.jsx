@@ -42,11 +42,11 @@ const Header = () => {
             <img src={anchor} alt="profile" className="profile" width={100} />
            </div>
 
-            <p className="subheadline">
+            <p className="text-lg">
 
               Set Yourself Apart and Achieve Your Career Goals with Our Support
             </p>
-            <p className='header-content'>
+            <p className='header-content -z-2'>
 Pinnacle is a well-established talent acquisition, talent management, and executive search firm
 with over 14 years of experience. We have successfully partnered with hundreds of companies
 and assisted thousands of candidates across three continents, working with organizations of all
@@ -98,4 +98,4 @@ global experience to our clients.</p>
 
 // export default Header;
 
-export default AppWrap(Header, 'home')
+export default Header;

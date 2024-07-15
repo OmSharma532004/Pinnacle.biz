@@ -47,7 +47,7 @@ const SuccessStories = () => {
              <div className="border-black  border-4 p-4 h-auto text-center mx-auto flex flex-col justify-center items-center" key={index}>
                <div className="border-[#B1C000] bg-white border-4 p-4 h-auto text-center mx-auto flex flex-col justify-center items-center"  >
                 <h3 className="text-xl sm:text-2xl text-black font-semibold text-center mb-4">{story.name}</h3>
-                <p className="text-base sm:text-lg text-black font-light text-center">{story.story}</p>
+                <p className="text-lg sm:text-lg text-black font-light text-center">{story.story}</p>
               </div>
              </div>
             ))}

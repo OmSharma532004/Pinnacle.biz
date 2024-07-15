@@ -30,7 +30,7 @@ const data = [
   },
   {
     title: 'Executive Search',
-    description: "Pinnacle specializes in finding exceptional executive talent to drive your business forward. With deep industry expertise and a personalized approach, we ensure that we connect you with leaders who align with your company's unique culture, values and strategic objectives. Our services include comprehensive leadership assessment, succession planning and market intelligence, enabling us to identify top-tier executives suited to your goals. Partner with Pinnacle to elevate your organization with the right leadership.     ",
+    description: "Pinnacle specializes in finding exceptional executive talent to drive your business forward. With deep industry expertise and a personalized approach, we ensure that we connect you with leaders who align with your company's unique culture, values and strategic objectives. Our services include comprehensive leadership assessment, succession planning and market intelligence, enabling us to identify top-tier executives suited to your goals. Partner with Pinnacle to elevate your organization with the right leadership.",
     imgUrl: i5,
     tags: ['Executive Search'],
     category: 'Employee',
@@ -50,7 +50,7 @@ const data = [
   },
   {
     title: 'Retained Search',
-    description: "Pinnacle specializes in retained search services, dedicated to finding top-tier executive talent for your organization’s critical leadership roles. With our deep industry expertise and personalized approach, we conduct thorough searches to identify candidates who perfectly align with your company’s culture, values, and strategic vision. Our commitment to excellence and comprehensive assessment process ensure we deliver the highest caliber leaders to drive your business forward. Trust Pinnacle for reliable and effective retained search solutions that elevate your leadership team.    ",
+    description: "Pinnacle specializes in retained search services, dedicated to finding top-tier executive talent for your organization’s critical leadership roles. With our deep industry expertise and personalized approach, we conduct thorough searches to identify candidates who perfectly align with your company’s culture, values, and strategic vision. Our commitment to excellence and comprehensive assessment process ensure we deliver the highest caliber leaders to drive your business forward. Trust Pinnacle for reliable and effective retained search solutions that elevate your leadership team.",
     imgUrl: i4,
     tags: ['Retained Search'],
     category: 'Employee',
@@ -69,8 +69,6 @@ const data = [
     tags: ['Research and Advisory Services'],
     category: 'Employee',
   }
-
-
 ];
 
 const Work = () => {
@@ -79,6 +77,7 @@ const Work = () => {
   const [activeFilter, setActiveFilter] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [category, setCategory] = useState('Candidate');
+  const [expanded, setExpanded] = useState({});
 
   useEffect(() => {
     setWorks(data);
@@ -119,7 +118,16 @@ const Work = () => {
     setActiveFilter(filterWork[newIndex].tags[0]);
   };
 
+  const toggleExpand = (index) => {
+    setExpanded({ ...expanded, [index]: !expanded[index] });
+  };
+
   const work = filterWork[currentIndex];
+
+  const getShortDescription = (description) => {
+    const words = description.split(' ');
+    return words.length > 50 ? words.slice(0, 50).join(' ') + '...' : description;
+  };
 
   return (
     <>
@@ -145,7 +153,7 @@ const Work = () => {
           ))
         )}
         {category === 'Employee' && (
-          ['Executive Search', 'Contingency Hiring',, 'Contractual Hiring', 'Retained Search', 'HR360','Research and Advisory Services'].map((item, index) => (
+          ['Executive Search', 'Contingency Hiring', 'Contractual Hiring', 'Retained Search', 'HR360', 'Research and Advisory Services'].map((item, index) => (
             <div
               key={index}
               onClick={() => handleFilterClick(item)}
@@ -170,7 +178,7 @@ const Work = () => {
           className="app__work-portfolio"
         >
           {filterWork.length > 0 && (
-            <div className="app__work-item app__flex">
+            <div className={`app__work-item app__flex ${expanded[currentIndex] ? 'expanded' : ''}`}>
               <div className="app__work-image app__flex">
                 {work.imgUrl && (
                   <img src={work.imgUrl} alt={work.title} />
@@ -179,17 +187,12 @@ const Work = () => {
 
               <div className="app__work-content app__flex">
                 <h4 className="bold-text">{work.title}</h4>
-                <p className="p-text" style={{ marginTop: 10 }}>{work.description}</p>
-
-                {work.tags[0] === "Premium Job Search Assistance" ?
-                  <Link to='/home' className='cta__button'>
-                    Know More
-                  </Link>
-                  :
-                  <a href='#contact' className='cta__button'>
-                    Know More
-                  </a>
-                }
+                <p className="p-text" style={{ marginTop: 10 }}>
+                  {expanded[currentIndex] ? work.description : getShortDescription(work.description)}
+                </p>
+                <button className="cta__button" onClick={() => toggleExpand(currentIndex)}>
+                  {expanded[currentIndex] ? 'Show Less' : 'Know More'}
+                </button>
               </div>
             </div>
           )}
