@@ -5,18 +5,17 @@ import { images } from '../../../../constants';
 import { AppWrap, MotionWrap } from '../../../../Wrapper';
 import expertGuiadance from '../../../../assets/expertGuidance.png';
 
-
 const abouts = [
-  { title: 'Expertise & Insight', description: 'With over a decade of experience, we deeply understand diverse industries and market dynamics, ensuring optimal talent acquisition and strategic business advice.', imgUrl: expertGuiadance },
-  { title: 'Tailored Solutions', description: 'Recognizing each business’s uniqueness, we provide customized services to meet specific objectives—from executive search to strategic advisory, ensuring tailored solutions that drive success.', imgUrl: images.about04 },
-  { title: 'Proven Success', description: 'Having assisted 50+ companies in building exceptional teams and placing over 100+ leaders, our track record underscores our ability to consistently deliver impactful results and foster growth for businesses and professionals alike.', imgUrl: images.about02 }
+  { title: 'Expertise & Insight', description: 'With over a decade of expertise, we possess a profound understanding of diverse industries, business segments and market dynamics, enabling us to provide superior <i>#talentacquisition</i> and strategic business guidance.', imgUrl: expertGuiadance },
+  { title: 'Tailored Solutions', description: 'Acknowledging the distinctiveness of every business, we deliver <i>#bespoke</i> services tailored to meet specific objectives. From executive search to strategic advisory, we ensure personalised solutions that drive success.', imgUrl: images.about04 },
+  { title: 'Proven Success', description: 'With a proven track record of helping numerous companies build exceptional teams and placing hundreds of candidates, we consistently deliver impactful results that drive growth for businesses and professionals', imgUrl: images.about02 }
 ];
 
 const About = () => {
   return (
     <>
       <h2 className='head-text'><span>Partner</span> With Us: Unmatched <br /><span>Expertise</span> and <span>Success</span></h2>
-      <div className='app__profiles'>
+      <div className='flex items-start justify-center w-full'>
         {abouts.map((about, index) => (
           <motion.div
             whileInView={{ opacity: 1 }}
@@ -25,14 +24,14 @@ const About = () => {
             className='app__profile-item'
             key={about.title + index}
           >
-            <img src={about.imgUrl} alt={about.title} />
-            <h2 className='bold-text' style={{ marginTop: 20 }}>{about.title}</h2>
-            <p className='p-text' style={{ marginTop: 10 }}>{about.description}</p>
+            <div className='flex flex-col items-center justify-center'>
+              <img src={about.imgUrl} alt={about.title} />
+              <h2 className='bold-text text-xl' style={{ marginTop: 20 }}>{about.title}</h2>
+              <p className='p-text text-lg' style={{ marginTop: 10 }} dangerouslySetInnerHTML={{ __html: about.description }}></p>
+            </div>
           </motion.div>
         ))}
       </div>
-
-     
 
       <div className="flex items-center justify-around mt-[30px] flex-wrap gap-5 md:gap-0 w-[100%] p-8 ">
         <div className="text-center">

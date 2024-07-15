@@ -45,14 +45,14 @@ const Header = () => {
             
             </h1>
 
-            <p className="subheadline">
+            <p className="text-lg">
 
             A dedicated team of professionals who grasp business needs, objectives and the evolving market demands.
             </p>
-            <p className='header-content'>
+            <p className='text-lg mt-4 mb-4'>
             Pinnacle is a leading service provider for "everything people" , offering tailored and high-quality custom services. Our skilled consulting team delivers comprehensive 360-degree solutions aligned with clients' visions and business goals. With over 100+ satisfied clients and thousands of professionals placed worldwide, we excel in consulting, advisory services, market research, career advisory services, RPO services, contract staffing and team building.  </p>
 
-           <p className=" text-xl mb-4 ">Trust Pinnacle to help you achieve your business objectives.</p>
+           <p className=" text-lg mb-4 ">Trust Pinnacle to help you achieve your business objectives.</p>
             <div className='header-buttons'>
               <Link to='/signup'
                 rel="noreferrer"              

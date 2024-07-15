@@ -124,10 +124,10 @@ const Work = () => {
   return (
     <>
       <div className="app__work-filter">
-        <div className={`app__work-filter-item ${category === 'Candidate' ? 'item-active' : ''}`} onClick={() => handleCategoryChange('Candidate')}>
+        <div className={`app__work-filter-item text-xl ${category === 'Candidate' ? 'item-active' : ''}`} onClick={() => handleCategoryChange('Candidate')}>
           Candidate
         </div>
-        <div className={`app__work-filter-item ${category === 'Employee' ? 'item-active' : ''}`} onClick={() => handleCategoryChange('Employee')}>
+        <div className={`app__work-filter-item text-xl ${category === 'Employee' ? 'item-active' : ''}`} onClick={() => handleCategoryChange('Employee')}>
           Employer
         </div>
       </div>
@@ -138,7 +138,7 @@ const Work = () => {
             <div
               key={index}
               onClick={() => handleFilterClick(item)}
-              className={`app__work-filter-item app__flex p-text ${activeFilter === item ? 'item-active' : ''}`}
+              className={`app__work-filter-item app__flex p-text text-lg ${activeFilter === item ? 'item-active' : ''}`}
             >
               {item}
             </div>
@@ -149,7 +149,7 @@ const Work = () => {
             <div
               key={index}
               onClick={() => handleFilterClick(item)}
-              className={`app__work-filter-item app__flex p-text ${activeFilter === item ? 'item-active' : ''}`}
+              className={`app__work-filter-item app__flex p-text text-lg ${activeFilter === item ? 'item-active' : ''}`}
             >
               {item}
             </div>
