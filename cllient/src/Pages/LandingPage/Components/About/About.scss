@@ -11,7 +11,7 @@
 
 .app__profiles {
   display: flex;
-  justify-content: center;
+  justify-content:space-around;
   align-items: flex-start;
   flex-wrap: wrap;
   margin-top: 2rem;
@@ -33,7 +33,7 @@ h2 {
 
 .app__profile-item {
   width: 100%;
-  max-width: 350px;
+  max-width: 300px;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;

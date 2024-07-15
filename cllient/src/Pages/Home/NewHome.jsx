@@ -7,6 +7,7 @@ import About2 from './Components/About/About';
 import SuccessStories from './Components/Success/SuccessStories';
 import Popup from './Components/Popup/Popup';
 
+
 const Elevate = () => {
   const [showPopup, setShowPopup] = useState(false);
 
@@ -28,7 +29,6 @@ const Elevate = () => {
       <div className="mt-[50px]"></div>
       <Header />
       <About />
-      {/* <Work /> */}
       <About2 />
       <SuccessStories />
       <Footer />

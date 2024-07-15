@@ -17,11 +17,11 @@ const Popup = ({ closePopup }) => {
   }, [closePopup]);
 
   return (
-    <div className="popup-overlay">
+    <div className="popup-overlay z-10">
       <div className="popup">
         <h2>Early Bird Offer!</h2>
         <p>Don't miss out on our exclusive early bird offer.</p>
-        <button onClick={closePopup}>Close</button>
+        <button className='bg-black text-white mt-[50px] rounded-lg' onClick={closePopup}>Close</button>
       </div>
     </div>
   );

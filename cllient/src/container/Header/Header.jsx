@@ -80,7 +80,7 @@ global experience to our clients.</p>
       </motion.div>
       
       
-      <motion.div
+      {/* <motion.div
         variant={scalevarients}
         whileInView={scalevarients.whileInView}
         className="app__header-circles"
@@ -91,7 +91,7 @@ global experience to our clients.</p>
             </div>
         ))}
 
-      </motion.div>
+      </motion.div> */}
     </div>
   )
 }

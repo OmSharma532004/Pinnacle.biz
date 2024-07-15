@@ -15,7 +15,7 @@ const About = () => {
   return (
     <>
       <h2 className='head-text'><span>Partner</span> With Us: Unmatched <br /><span>Expertise</span> and <span>Success</span></h2>
-      <div className='app__profiles'>
+      <div className='app__profiles flex items-center justify-around gap-4'>
         {abouts.map((about, index) => (
           <motion.div
             whileInView={{ opacity: 1 }}
@@ -33,7 +33,7 @@ const About = () => {
         ))}
       </div>
 
-      <div className="flex-stats">
+      <div className="flex-stats mt-[100px]">
         <div className="flex-stats-item">
           <h3 className="stat-title">Inception</h3>
           <p className="stat-value">2010</p>

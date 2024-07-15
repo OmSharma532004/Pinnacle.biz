@@ -94,7 +94,7 @@ const About = () => {
       </div>
       <div className='enroll-button-container mt-8 flex justify-center'>
         <button className='enroll-button bg-[B1C000]  text-white p-3 rounded-lg' onClick={openForm}>
-          Enroll Now
+          Sign Now
         </button>
       </div>
 
@@ -139,7 +139,7 @@ const About = () => {
                 />
                 {errors.phone && <p className='text-red-500 text-sm'>{errors.phone}</p>}
               </div>
-              <div className='mb-4'>
+              {/* <div className='mb-4'>
                 <label className='block text-gray-700 mb-2'>I am interested in</label>
                 <select
                   name='interest'
@@ -155,14 +155,14 @@ const About = () => {
                   <option>Program fees</option>
                 </select>
                 {errors.interest && <p className='text-red-500 text-sm'>{errors.interest}</p>}
-              </div>
+              </div> */}
               <div className='mb-4'>
                 <label className='block text-gray-700 mb-2'>Additional Message</label>
                 <textarea
                   name='message'
                   value={formData.message}
                   onChange={handleChange}
-                  className='w-full p-2 border border-gray-300 rounded'
+                  className='w-full p-2 border h-[100px]  border-gray-300 rounded'
                 ></textarea>
               </div>
               <button type='submit' className='bg-blue-500 text-white p-2 rounded'>

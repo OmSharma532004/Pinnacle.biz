@@ -111,7 +111,7 @@ const Footer = () => {
 
         <div className="left">
         <img src={logo} alt="Pinnacle Logo" />
-        <div className="flex">             
+        <div className="flex items-center justify-center ">             
             <div className='section'>
               <h1>Quick Links</h1>
               <ul>
@@ -123,16 +123,16 @@ const Footer = () => {
 
             </div>
 
-            {/* <div className='section'>
-              <h1>Our Services</h1>
-              <ul>
-                <li><Link>Recruiting and More</Link></li>
-                <li><Link>Premium Job Search Assistance</Link></li>
-                <li><Link>Business Advisory</Link></li>
-                <li><Link>Business Solutions</Link></li>
+            <div className='section'>
+              {/* <h1>Our Services</h1> */}
+              <ul className=' underline '>
+                <li><Link>#Talentacquisition</Link></li>
+                <li><Link>#Executivesearch</Link></li>
+                <li><Link>#Personalisedsolutions</Link></li>
+                <li><Link>#Bespoke</Link></li>
               </ul>
 
-            </div> */}
+            </div>
           </div>
 
           <div className="pt-4">
