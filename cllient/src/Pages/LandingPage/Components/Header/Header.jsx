@@ -21,96 +21,25 @@ const scalevarients = {
 };
 
 const offers = [
-  "Get your free consultation today",
-  "Contact our team for preferred pricing",
-  "Early bird offers for July 2024 - get in touch with our team!",
-  "Get your free consultation today",
-  "Contact our team for preferred pricing",
-  "Early bird offers for July 2024 - get in touch with our team!",
-  "Get your free consultation today",
-  "Contact our team for preferred pricing",
-  "Early bird offers for July 2024 - get in touch with our team!",
-  "Get your free consultation today",
-  "Contact our team for preferred pricing",
-  "Early bird offers for July 2024 - get in touch with our team!",
-  "Get your free consultation today",
-  "Contact our team for preferred pricing",
-  "Early bird offers for July 2024 - get in touch with our team!",
-  "Get your free consultation today",
-  "Contact our team for preferred pricing",
-  "Early bird offers for July 2024 - get in touch with our team!",
-  "Get your free consultation today",
-  "Contact our team for preferred pricing",
-  "Early bird offers for July 2024 - get in touch with our team!",
-  "Get your free consultation today",
-  "Contact our team for preferred pricing",
-  "Early bird offers for July 2024 - get in touch with our team!",
-  "Get your free consultation today",
-  "Contact our team for preferred pricing",
-  "Early bird offers for July 2024 - get in touch with our team!",
-  "Get your free consultation today",
-  "Contact our team for preferred pricing",
-  "Early bird offers for July 2024 - get in touch with our team!",
-  "Get your free consultation today",
-  "Contact our team for preferred pricing",
-  "Early bird offers for July 2024 - get in touch with our team!",
-  "Get your free consultation today",
-  "Contact our team for preferred pricing",
-  "Early bird offers for July 2024 - get in touch with our team!",
-  "Get your free consultation today",
-  "Contact our team for preferred pricing",
-  "Early bird offers for July 2024 - get in touch with our team!",
-  "Get your free consultation today",
-  "Contact our team for preferred pricing",
-  "Early bird offers for July 2024 - get in touch with our team!",
-  "Get your free consultation today",
-  "Contact our team for preferred pricing",
-  "Early bird offers for July 2024 - get in touch with our team!",
-  "Get your free consultation today",
-  "Contact our team for preferred pricing",
-  "Early bird offers for July 2024 - get in touch with our team!",
-  "Get your free consultation today",
-  "Contact our team for preferred pricing",
-  "Early bird offers for July 2024 - get in touch with our team!",
-  "Get your free consultation today",
-  "Contact our team for preferred pricing",
-  "Early bird offers for July 2024 - get in touch with our team!",
-  "Get your free consultation today",
-  "Contact our team for preferred pricing",
-  "Early bird offers for July 2024 - get in touch with our team!",
-  "Get your free consultation today",
-  "Contact our team for preferred pricing",
-  "Early bird offers for July 2024 - get in touch with our team!",
-  "Get your free consultation today",
-  "Contact our team for preferred pricing",
-  "Early bird offers for July 2024 - get in touch with our team!",
-  "Get your free consultation today",
-  "Contact our team for preferred pricing",
-  "Early bird offers for July 2024 - get in touch with our team!",
-  "Get your free consultation today",
-  "Contact our team for preferred pricing",
-  "Early bird offers for July 2024 - get in touch with our team!",
-  "Get your free consultation today",
-  "Contact our team for preferred pricing",
-  "Early bird offers for July 2024 - get in touch with our team!",
-  "Get your free consultation today",
-  "Contact our team for preferred pricing",
-  "Early bird offers for July 2024 - get in touch with our team!",
-  "Get your free consultation today",
-  "Contact our team for preferred pricing",
-  "Early bird offers for July 2024 - get in touch with our team!",
-  "Get your free consultation today",
-  "Contact our team for preferred pricing",
-  "Early bird offers for July 2024 - get in touch with our team!",
-  "Get your free consultation today",
-  "Contact our team for preferred pricing",
-  "Early bird offers for July 2024 - get in touch with our team!",
-  "Get your free consultation today",
-  "Contact our team for preferred pricing",
-  "Early bird offers for July 2024 - get in touch with our team!",
-  "Get your free consultation today",
-  "Contact our team for preferred pricing",
-  "Early bird offers for July 2024 - get in touch with our team!",
+ "ELEVATE - Contact us for preferred pricing ",
+ "ELEVATE - Contact us for preferred pricing ",
+ "ELEVATE - Contact us for preferred pricing ",
+ "ELEVATE - Contact us for preferred pricing ",
+ "ELEVATE - Contact us for preferred pricing ",
+ "ELEVATE - Contact us for preferred pricing ",
+ "ELEVATE - Contact us for preferred pricing ",
+ "ELEVATE - Contact us for preferred pricing ",
+ "ELEVATE - Contact us for preferred pricing ",
+ "ELEVATE - Contact us for preferred pricing ",
+ "ELEVATE - Contact us for preferred pricing ",
+ "ELEVATE - Contact us for preferred pricing ",
+ "ELEVATE - Contact us for preferred pricing ",
+ "ELEVATE - Contact us for preferred pricing ",
+ "ELEVATE - Contact us for preferred pricing ",
+ "ELEVATE - Contact us for preferred pricing ",
+ "ELEVATE - Contact us for preferred pricing ",
+ "ELEVATE - Contact us for preferred pricing ",
+ "ELEVATE - Contact us for preferred pricing ",
   
 ];
 
@@ -139,14 +68,14 @@ const Header = () => {
               <p className="text-lg">
                 A dedicated team of professionals who grasp business needs, objectives and the evolving market demands.
               </p>
-              <p className='text-lg mt-4 mb-4'>
-                Pinnacle is a leading service provider for "everything people", offering tailored and high-quality custom services. Our skilled consulting team delivers comprehensive 360-degree solutions aligned with clients' visions and business goals. With over 100+ satisfied clients and thousands of professionals placed worldwide, we excel in consulting, advisory services, market research, career advisory services, RPO services, contract staffing, and team building.
+              <p className='text-lg text-justify mt-4 mb-4'>
+                Pinnacle is a leading service provider for "everything people", offering tailored and high-quality custom services. Our skilled consulting team delivers comprehensive 360-degree solutions aligned with clients' visions and business goals. With over 100+ satisfied clients and thousands of professionals placed worldwide, we excel in consulting, executive search,  advisory services , market research, career advisory services, RPO services, contract staffing and team building.
               </p>
               <p className=" text-lg mb-4 ">Trust Pinnacle to help you achieve your business objectives.</p>
               <div className='header-buttons'>
-                <Link to='/signup'
+                <Link to="https://calendly.com/contact-pinnacle/book-a-meeting"
                   rel="noreferrer"              
-                  className="cta-button">
+                  className="cta-button text-lg">
                   Get Started
                 </Link>
               </div>
@@ -162,10 +91,10 @@ const Header = () => {
         <motion.div
           variant={scalevarients}
           whileInView={scalevarients.whileInView}
-          className="app__header-circles"
+          className="app__header-circles  "
         >
           {[Rocket, handshake, trophy].map((circle, index) => (
-              <div className="circle-cmp app__flex" key={`circle-${index}`}>
+              <div className="circle-cmp app__flex hidden md:flex" key={`circle-${index}`}>
                 <img src={circle} alt="profile_bg" />
               </div>
           ))}

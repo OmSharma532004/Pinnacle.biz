@@ -43,6 +43,8 @@ const paymentRoute = require("./routes/paymentRoute");
 app.use("/payment", paymentRoute);
 const jobRoute = require("./routes/jobRoutes");
 app.use("/job", jobRoute);
+const applicationRoute = require("./routes/applicationRoutes");
+app.use("/application", applicationRoute);
 
 
 app.all("*", (req, res, next) => {

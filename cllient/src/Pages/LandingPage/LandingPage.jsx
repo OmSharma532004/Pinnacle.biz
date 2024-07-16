@@ -1,4 +1,5 @@
-import {Navbar, Header, About, Work, Footer} from './Components/index'
+import { Header, About, Work, Footer} from './Components/index'
+import Navbar from '../../components/Navbar/Navbar'
 // import Footer from '../../components/Footer/Footer'
 import "../../App.scss"
 

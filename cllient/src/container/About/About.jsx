@@ -88,13 +88,13 @@ const About = () => {
             <b className='font-semibold text-3xl md:text-4xl mt-5 text-[#B1C000]'>Elevate</b>
           </div>
         </div>
-        <div className='w-[90%] md:w-[70%] mt-8 md:mt-[100px] text-lg  text-gray-500'>
+        <div className='w-[90%] md:w-[70%] mt-8  text-lg  text-gray-500'>
           In the face of organizational restructuring, even the most seasoned professionals can find themselves facing unexpected career transitions. Pinnacle's ELEVATE Program is here to turn this challenging period into a transformative opportunity. Designed specifically for middle and senior-level candidates, our comprehensive outplacement services provide the support you need to secure a role that aligns with your skills and career aspirations.
         </div>
       </div>
       <div className='enroll-button-container mt-8 flex justify-center'>
         <button className='enroll-button bg-[B1C000]  text-white p-3 rounded-lg' onClick={openForm}>
-          Sign Now
+          Sign Up Now
         </button>
       </div>
 

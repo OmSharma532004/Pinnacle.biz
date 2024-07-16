@@ -102,7 +102,7 @@ const Footer = () => {
 
   return (
     <>
-    <section className="footer" id='contact'>
+    <section className="footer md:-mt-[65px]" id='contact'>
     <motion.div className="container"
       whileInView={{ y: [100, 0], opacity: [0, 1] }}
       transition={{ duration: 0.5, delayChildren: 0.5 }}
@@ -110,41 +110,23 @@ const Footer = () => {
 
 
         <div className="left">
+        <div className=' flex flex-col items-center justify-center'>
         <img src={logo} alt="Pinnacle Logo" />
-        <div className="flex items-center justify-center ">             
-            <div className='section'>
-              <h1>Quick Links</h1>
-              <ul>
-                <li><Link>Home</Link></li>
-                <li><Link>About Us</Link></li>
-                <li><Link>Blog</Link></li>
-                <li><Link>Contact Us</Link></li>
-              </ul>
+        
+     
 
-            </div>
+     <div className="pt-4  text-center ">
+       
+       <p className='w-[600px]'>
+         If you have any questions or inquiries, feel free to reach out to us
+       </p>
+       <p>Email: contact@pinnacle.biz</p>
+       <p>Phone: +91 11 7966 2027</p>
+       <SocialMedia />
 
-            <div className='section'>
-              {/* <h1>Our Services</h1> */}
-              <ul className=' underline '>
-                <li><Link>#Talentacquisition</Link></li>
-                <li><Link>#Executivesearch</Link></li>
-                <li><Link>#Personalisedsolutions</Link></li>
-                <li><Link>#Bespoke</Link></li>
-              </ul>
-
-            </div>
-          </div>
-
-          <div className="pt-4">
-            
-            <p>
-              If you have any questions or inquiries, feel free to reach out to us!
-            </p>
-            <p>Email: contact@pinnacle.biz</p>
-            <p>Phone: +91 844 7777 213</p>
-            <SocialMedia />
-
-          </div>
+     </div>
+        </div>
+        
 
 
         </div>
@@ -180,10 +162,71 @@ const Footer = () => {
           )}
 
         </div>
+        
 
    </motion.div>
+   
+   
   </section>
-   <p>© 2012 - 2024 Pinnacle Solutions, Pinnacle.biz, ELEVATE. hr360 ~ All rights reserved.</p>
+  <div className=' flex flex-col w-full mb-5 justify-center gap-5 '>
+       <div className="flex items-start w-full justify-around text-gray-600 text-lg ">             
+            <div className='section flex flex-col items-center justify-center'>
+              <h1 className=' text-xl mb-4 text-[#B1C000] '> Quick Links</h1>
+              <ul>
+                <li><Link>Home</Link></li>
+                <li><Link>About Us</Link></li>
+                <li><Link>Blog</Link></li>
+                <li><Link>Contact Us</Link></li>
+              </ul>
+
+            </div>
+            <div className='section flex flex-col items-center justify-center'>
+              <h1 className=' text-xl mb-4 text-[#B1C000] '>Legal</h1>
+              <ul>
+                <li><Link>Disclaimer Policy</Link></li>
+                <li><Link>Cookie Policy</Link></li>
+                <li><Link>Privacy Policy</Link></li>
+                <li><Link>SiteMap</Link></li>
+              </ul>
+
+            </div>
+            <div className='section flex flex-col items-center justify-center'>
+              <h1 className=' text-xl mb-4 text-[#B1C000] '>Information</h1>
+              <ul className=' flex items-start justify-center gap-5' >
+               <div>
+               <li><Link>Jobs in Delhi</Link></li>
+                <li><Link>Jobs in Gurugram</Link></li>
+                <li><Link>Jobs in Bengaluru</Link></li>
+                <li><Link>Jobs in Mumbai</Link></li>
+                <li><Link>Engineering Jobs</Link></li>
+                <li><Link>Product Jobs</Link></li>
+                <li><Link>Leadership Jobs</Link></li>
+               </div>
+               <div>
+               <li><Link>Jobs in India</Link></li>
+                <li><Link>Jobs In Dubai</Link></li>
+                <li><Link>Jobs in Singapore</Link></li>
+                <li><Link>Jobs in North America</Link></li>
+                <li><Link>Jobs in London</Link></li>
+                <li><Link>Jobs in Hong Kong</Link></li>
+               
+               
+              
+               </div>
+                
+
+              </ul>
+
+            </div>
+
+            
+          </div>
+         
+
+
+       </div>
+  
+   <p className='text-gray-600 mt-6'>© 2012 - 2024 Pinnacle Solutions, Pinnacle.biz, ELEVATE, HR360 ~ All rights reserved.</p>
 
 </>
   )

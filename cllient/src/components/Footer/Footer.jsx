@@ -1,17 +1,16 @@
 import React from 'react'
 import "./Footer.scss"
-import {AppWrap} from '../../Wrapper'
 import  {motion} from "framer-motion"
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import PhoneComponent from '../../components/PhoneComponent/Phonecomponent2.jsx';
+import PhoneComponent from '../../components/PhoneComponent/Phonecomponent2.jsx'
 import axios from 'axios';
 import { FaFacebook,FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import logo from '../../assets/logo.webp';
 import { toast } from 'react-toastify';
 import { BsGithub,BsLinkedin, BsTwitter, BsInstagram } from 'react-icons/bs';
 import { FaXTwitter } from "react-icons/fa6";
-
+import {AppWrap,MotionWrap} from '../../Wrapper'
 
 
 const Footer = () => {
@@ -87,7 +86,7 @@ const Footer = () => {
     };
     const SocialMedia = () => (
       
-      <div className="app__social flex flex-row justify-start gap-3 p-0">
+      <div className="app__social flex flex-row justify-start gap-3 p-0 lg:hidden">
         <a target="_blank" rel="noreferrer" href='https://x.com/Pinnaclesol'>
           <FaXTwitter />
         </a>
@@ -103,25 +102,42 @@ const Footer = () => {
 
   return (
     <>
-    <section className="footer" id='contact'>
+    <section className="footer md:-mt-[65px]" id='contact'>
     <motion.div className="container"
       whileInView={{ y: [100, 0], opacity: [0, 1] }}
       transition={{ duration: 0.5, delayChildren: 0.5 }}
     >
-        <div className="contact-info">
-            <img src={logo} alt="Company Logo" className="mb-4" style={{ width: '150px' }} />
-          <p className="">If you have any questions or inquiries, feel free to reach out to us!</p>
-          <p className="">Email: contact@pinnacle.biz</p>
-          <p className="">Phone: +91 844 7777 213</p>
-          <SocialMedia />
-          
+
+
+        <div className="left">
+        <div className=' flex flex-col items-center justify-center'>
+        <img src={logo} alt="Pinnacle Logo" />
+        
+     
+
+     <div className="pt-4  text-center ">
+       
+       <p className='w-[600px]'>
+         If you have any questions or inquiries, feel free to reach out to us
+       </p>
+       <p>Email: contact@pinnacle.biz</p>
+       <p>Phone: +91 11 7966 2027</p>
+       <SocialMedia />
+
+     </div>
         </div>
+        
+
+
+        </div>
+
+        <div className="right">
         {isSubmitted ? 
         <p className="successMessage">
           Thank you for contacting us! <br />We will get back to you shortly.
         </p> 
           : (
-            <div className="contact-form">
+          <div className="contact-form">
             <h2 className="text-2xl font-bold mb-4">Get In Touch </h2>
             <form className="form">
               <div className='mb-4'>
@@ -144,12 +160,80 @@ const Footer = () => {
             </form>
           </div>
           )}
-    </motion.div>
+
+        </div>
+        
+
+   </motion.div>
+   
+   
   </section>
-  <p className=' text-center bg-white mb-8 pt-4'>© 2012 - 2024 Pinnacle Solutions, Pinnacle.biz, ELEVATE. hr360 ~ All rights reserved.</p>
+  <div className=' flex flex-col w-full mb-5 justify-center gap-5 '>
+       <div className="flex md:flex-row flex-col items-center gap-5 md:items-start w-full justify-around text-gray-600 text-lg ">             
+            <div className='section flex flex-col items-center justify-center'>
+              <h1 className=' text-xl mb-4 text-[#B1C000] '> Quick Links</h1>
+              <ul>
+                <li><Link>Home</Link></li>
+                <li><Link>About Us</Link></li>
+                <li><Link>Blog</Link></li>
+                <li><Link>Contact Us</Link></li>
+              </ul>
+
+            </div>
+            <div className='section flex flex-col items-center justify-center'>
+              <h1 className=' text-xl mb-4 text-[#B1C000] '>Legal</h1>
+              <ul>
+                <li><Link>Disclaimer Policy</Link></li>
+                <li><Link>Cookie Policy</Link></li>
+                <li><Link>Privacy Policy</Link></li>
+                <li><Link>SiteMap</Link></li>
+              </ul>
+
+            </div>
+            <div className='section flex flex-col items-center justify-center'>
+              <h1 className=' text-xl mb-4 text-[#B1C000] '>Information</h1>
+              <ul className=' flex items-start justify-center gap-5' >
+               <div>
+               <li><Link>Jobs in Delhi</Link></li>
+                <li><Link>Jobs in Gurugram</Link></li>
+                <li><Link>Jobs in Bengaluru</Link></li>
+                <li><Link>Jobs in Mumbai</Link></li>
+                <li><Link>Engineering Jobs</Link></li>
+                <li><Link>Product Jobs</Link></li>
+                <li><Link>Leadership Jobs</Link></li>
+               </div>
+               <div>
+               <li><Link>Jobs in India</Link></li>
+                <li><Link>Jobs In Dubai</Link></li>
+                <li><Link>Jobs in Singapore</Link></li>
+                <li><Link>Jobs in North America</Link></li>
+                <li><Link>Jobs in London</Link></li>
+                <li><Link>Jobs in Hong Kong</Link></li>
+               
+               
+              
+               </div>
+                
+
+              </ul>
+
+            </div>
+
+            
+          </div>
+         
+
+
+       </div>
+  
+   <p className='text-gray-600 mt-6'>© 2012 - 2024 Pinnacle Solutions, Pinnacle.biz, ELEVATE, HR360 ~ All rights reserved.</p>
 
 </>
   )
 }
 
-export default Footer
+export default AppWrap(
+  MotionWrap(Footer, 'app__footer'),
+  'contact',
+  "app__whitebg"
+);

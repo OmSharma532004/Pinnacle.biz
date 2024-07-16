@@ -81,6 +81,8 @@ import Elevate from "./Pages/Home/NewHome"
 import JobFeed from "./components/JobFeed/Jobfeed"
 import JobDetails from "./components/JobFeed/JobDetails"
 import JobList from "./components/JobFeed/Jobfeed"
+import Executive from "./Pages/ExecutiveSerch/Executive"
+import Contingency from "./Pages/Cotingency/ContingencySearch"
 
 const App = () => {
   return (
@@ -92,6 +94,8 @@ const App = () => {
       <Route path="/jobs" element={<JobList />} />
       <Route path="*" element={<Layout />} />
       <Route path="/job/:id" element={<JobDetails />} />
+      <Route path="/executive" element={<Executive />} />
+      <Route path="/contingency" element={<Contingency />} />
 
 
     </Routes>

@@ -12,10 +12,11 @@ import PlanStatus from './Pages/PlanStatus/PlanStatus';
 import JobForm from './Pages/CreateJob/CreateJob';
 import AdminJobs from './Pages/Jobs/AdminJobs';
 import EditJob from './Pages/Jobs/EditJobs';
+import AdminJobDetails from './Pages/Jobs/AdminJobDetail';
+import AdminApplications from './Pages/Applications/AdminApplications';
+import AdminApplicationDetails from './Pages/Applications/AdminApplicationDetails';
 
 function App() {
-
-
   return (
     <>
       <ToastContainer />
@@ -30,14 +31,14 @@ function App() {
           <Route path="/createplan" element={<CreatePlan />} /> 
           <Route path="/planstatus/:userId" element={<PlanStatus />} />
           <Route path="/createjob" element={<JobForm />} />
-          <Route path="/allJobs" element={<AdminJobs/>} />
+          <Route path="/allJobs" element={<AdminJobs />} />
           <Route path="/admin/edit/:id" element={<EditJob />} />
-
+          <Route path="/admin/view/:id" element={<AdminJobDetails />} />
+          <Route path="/admin/applications" element={<AdminApplications/>}/>
+          <Route path="/admin/application/:id" element={<AdminApplicationDetails/>} />
+              
         </Route> 
       </Routes> 
-
-
-
     </>
   )
 }

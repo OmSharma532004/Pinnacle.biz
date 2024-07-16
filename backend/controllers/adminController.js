@@ -318,3 +318,24 @@ module.exports.editRedeemNote = async (req, res) => {
     await userPlan.save();
     res.status(200).json(userPlan);
 }
+
+
+module.exports.getUserDetailsById = async (req, res) => {   
+    const user = await User.findById(req.params.id);
+    const profile = await Profile.findById(user.profile);
+    if(!user) {
+        throw new ExpressError("User not found", 404);
+    }
+    console.log(user);
+    console.log(profile);
+    res.status(200).json(user);
+}
+
+//get user profile by user ID
+module.exports.getUserProfile = async (req, res) => {
+    const profile = await Profile.findOne({ userId: req.params.id });
+    if(!profile) {
+        throw new ExpressError("Profile not found", 404);
+    }
+    res.status(200).json(profile);
+}

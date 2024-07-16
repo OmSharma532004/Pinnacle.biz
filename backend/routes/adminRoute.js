@@ -53,4 +53,8 @@ router.route("/updateUserPlan/:userId/:serviceId/:planId")
 router.route("/editRedeemNote/:userId/:serviceId/:planId")
     .put(isAdmin, catchAsync(adminController.editRedeemNote));
 
+    //get user details by id
+router.route("/user/:id")
+.get(isAdmin, catchAsync(adminController.getUserDetailsById));
+
 module.exports = router;

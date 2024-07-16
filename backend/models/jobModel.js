@@ -31,7 +31,11 @@ const jobSchema = new Schema({
     skills: {
         type: [String],
         required: true
-    }
+    },
+    applications: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Application'
+    }]
 
 
 

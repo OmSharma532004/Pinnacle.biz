@@ -52,6 +52,7 @@ const AdminJobs = () => {
                                     <td className="px-4 py-2 flex space-x-4">
                                         <Link to={`/admin/edit/${job._id}`} className="text-blue-600 hover:underline">Edit</Link>
                                         <button onClick={() => deleteJob(job._id)} className="text-red-600 hover:underline">Delete</button>
+                                        <Link to={`/admin/view/${job._id}`} className="text-[#B1C000] hover:underline">View</Link>
                                     </td>
                                 </tr>
                             ))}

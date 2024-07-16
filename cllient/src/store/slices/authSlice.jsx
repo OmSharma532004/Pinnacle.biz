@@ -3,11 +3,13 @@ import {createSlice} from '@reduxjs/toolkit';
 
 const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
 const expiresAt = new Date( localStorage.getItem('expiresIn'));
+const user = localStorage.getItem('user');
 
 console.log(isLoggedIn, expiresAt);
 
 const initialState = {
     isLoggedIn: isLoggedIn && expiresAt > Date.now(), // Compare expiresAt with the current date
+    user: user ? JSON.parse(user) : null,
 };
 
 console.log(initialState);
@@ -24,10 +26,15 @@ const authSlice = createSlice({
             state.isLoggedIn = false;
             localStorage.setItem('isLoggedIn', 'false');
         },
+        userState: (state, action) => {
+            state.user = action.payload;
+            localStorage.setItem('user', JSON.stringify(action.payload
+            ));
+        }
     },
 });
 
-export const { login, logout } = authSlice.actions;
+export const { login, logout,userState  } = authSlice.actions;
 export default authSlice.reducer;
 
 

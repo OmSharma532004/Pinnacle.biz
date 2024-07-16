@@ -27,7 +27,7 @@ const About = () => {
             <div className='flex flex-col items-center justify-center'>
               <img src={about.imgUrl} alt={about.title} />
               <h2 className='bold-text text-xl' style={{ marginTop: 20 }}>{about.title}</h2>
-              <p className='p-text text-lg' style={{ marginTop: 10 }} dangerouslySetInnerHTML={{ __html: about.description }}></p>
+              <p className='p-text text-lg text-center' style={{ marginTop: 10 }} dangerouslySetInnerHTML={{ __html: about.description }}></p>
             </div>
           </motion.div>
         ))}
