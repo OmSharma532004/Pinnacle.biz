@@ -7,7 +7,6 @@ import About2 from './Components/About/About';
 import SuccessStories from './Components/Success/SuccessStories';
 import Popup from './Components/Popup/Popup';
 
-
 const Elevate = () => {
   const [showPopup, setShowPopup] = useState(false);
 
@@ -33,6 +32,14 @@ const Elevate = () => {
       <SuccessStories />
       <Footer />
       {showPopup && <Popup closePopup={closePopup} />}
+      <div className="fixed bottom-[20px] right-[10px] z-[100] md:bottom-[150px] md:right-[10px]">
+        <a 
+          className='text-lg font-semibold hover:bg-green-800 font-sans bg-[#B1C000] rounded-xl p-5 text-white' 
+          href="https://calendly.com/contact-pinnacle/book-a-meeting"
+        >
+          Schedule a Meeting
+        </a>
+      </div>
     </div>
   );
 };

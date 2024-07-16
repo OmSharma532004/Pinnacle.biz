@@ -11,9 +11,9 @@ const LandingPage = () => {
       <Work />
       
       <Footer />
-      <div style={{position: 'fixed', bottom: '150px', right: '10px'}}>
-        <a 
-        className=' text-lg font-semibold hover:bg-green-800 font-sans bg-[#B1C000] rounded-xl p-5 text-white '
+      <div className="fixed bottom-[20px] right-[10px] z-[100] md:bottom-[150px] md:right-[10px]">
+      <a 
+        className=' text-lg font-semibold hover:bg-green-800 font-sans bg-[#B1C000] rounded-xl p-5  text-white '
           href="https://calendly.com/contact-pinnacle/book-a-meeting" 
              >
           Schedule a Meeting
