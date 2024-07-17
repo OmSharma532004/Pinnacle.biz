@@ -115,9 +115,9 @@ const Footer = () => {
         
      
 
-     <div className="pt-4  text-center ">
+     <div className="pt-4 flex flex-col items-center justify-center   text-center ">
        
-       <p className='w-[600px]'>
+       <p className='w-[250px] md:w-[600px] lg:w-[600px] '>
          If you have any questions or inquiries, feel free to reach out to us
        </p>
        <p>Email: contact@pinnacle.biz</p>
@@ -134,7 +134,7 @@ const Footer = () => {
         <div className="right">
         {isSubmitted ? 
         <p className="successMessage">
-          Thank you for contacting us! <br />We will get back to you shortly.
+          Thank you for contacting us! <br /> We will get back to you shortly.
         </p> 
           : (
           <div className="contact-form">

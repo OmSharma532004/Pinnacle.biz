@@ -174,21 +174,27 @@ module.exports.contactUs = async (req, res) => {
         throw new ExpressError("All fields are required", 400);
     }
 
-    let config = {
-        service: 'gmail',
+    const transporter = nodemailer.createTransport({
+        service: "gmail",
+        host: "smtp.gmail.com",
+        port: 587,
+        secure: false,
         auth: {
-            user: `${process.env.EMAIL}`,
-            pass: `${process.env.PASSWORD}`
-        }
-    };
-
-    let transporter = nodemailer.createTransport(config); 
+          user: "omsharma532004@gmail.com",
+          pass: "rjvzraqvizjjarxw", // Consider using an App Password
+        },
+        tls: {
+          rejectUnauthorized: false,
+        },
+        socketTimeout: 5000, // 5 seconds
+        connectionTimeout: 10000, // 10 seconds
+      });
 
     const textMessage = `<p>Hello Admin,</p><p> <br> You have received a new query submission from the website. Here are the details:</p> <p> <br> Name: ${name}</p><p>Email: ${email}</p><p>Phone Number: ${phoneNumber}</p><p>Message: ${message}</p> <p> <br> <br> Please respond to the query as soon as possible.</p> <p> <br> Best regards,</p><p>Pinnacle Solutions</p><p>www.pinnacle.biz</p><p>Email: contact@pinnacle.biz</p>`;
 
     let body = {
-        from: `${process.env.EMAIL}`,
-        to: `${process.env.EMAIL}`,
+        from: `omsharma532004@gmail.com`,
+        to: `omsharma532004@gmail.com`,
         subject: `New Query Submission`,
         html: textMessage
     };

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import './About.scss';
 import { AppWrap, MotionWrap } from '../../Wrapper';
 import anchor from '../../assets/anchor.png';
+import { Link } from 'react-router-dom';
 
 const About = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -92,10 +93,12 @@ const About = () => {
           In the face of organizational restructuring, even the most seasoned professionals can find themselves facing unexpected career transitions. Pinnacle's ELEVATE Program is here to turn this challenging period into a transformative opportunity. Designed specifically for middle and senior-level candidates, our comprehensive outplacement services provide the support you need to secure a role that aligns with your skills and career aspirations.
         </div>
       </div>
-      <div className='enroll-button-container mt-8 flex justify-center'>
-        <button className='enroll-button bg-[B1C000]  text-white p-3 rounded-lg' onClick={openForm}>
-          Sign Up Now
-        </button>
+      <div className='enroll-button-container bg-[#B1C000] p-4 rounded-xl text-white mt-8 flex justify-center'>
+      <Link to="https://calendly.com/contact-pinnacle/book-a-meeting"
+                  rel="noreferrer"              
+                  className="cta-button text-lg">
+                 Know More
+                </Link>
       </div>
 
       {isOpen && (

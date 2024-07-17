@@ -4,7 +4,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import exp from "constants";
 
 const contingencyData = {
-    title: "Pinnacle’s Contingency Hiring Practice",
+    title: "Pinnacle’s Contingency Recruiting Practice",
     description: "In the context of recruitments, contingent stands for conversion/closure-based fees that Pinnacle charges our clients on successfully filling your organization’s open position.",
     advantages: [
       "Reduced fees: With contingency hiring you only have to pay for the successful hire that you make using our platforms.",

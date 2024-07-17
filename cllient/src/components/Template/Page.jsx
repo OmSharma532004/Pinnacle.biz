@@ -8,7 +8,7 @@ const Page = ({ data }) => {
 
       <header className="bg-white w-[70%] p-8 rounded-lg flex flex-col items-start gap-5 justify-center  mb-8">
         <div className="flex items-center justify-between mb-6">
-          <h1 className="text-4xl font-bold text-gray-800">
+          <h1 className="text-5xl font-bold text-gray-800">
             {data.title}
             {/* <span className="block text-2xl text-gray-600">
               Reach New Heights
@@ -20,15 +20,16 @@ const Page = ({ data }) => {
           <a
             rel="noreferrer"
             className="bg-[#B1C000] text-white px-4 py-2 rounded-lg"
-            href="/signup"
+            href="https://calendly.com/contact-pinnacle/book-a-meeting"
           >
             Get Started
           </a>
+          
         </div>
       </header>
 
       <section className="bg-white flex flex-col items-center justify-center p-8 rounded-lg ">
-        <h2 className="text-3xl font-semibold text-center text-gray-800 mb-4">
+        <h2 className="text-5xl font-semibold text-center text-gray-800 mb-4">
           What You Can Expect
         </h2>
         <div className=" flex mt-[50px]  items-center justify-center flex-wrap gap-6">
@@ -40,7 +41,7 @@ const Page = ({ data }) => {
               <h2 className="text-xl font-semibold text-[#B1C000] mb-2">
                 {advantage.split(':')[0]}
               </h2>
-              <p className="text-lg text-gray-700">{advantage.split(':')[1]}</p>
+              <p className="text-lg text-justify text-gray-700">{advantage.split(':')[1]}</p>
             </div>
           ))}
         </div>

@@ -58,10 +58,11 @@ global experience to our clients.</p>
 
 
             <div className='header-buttons'>
-              <Link to='/signup'
-                rel="noreferrer"              
-                className="cta-button">
-                Get Started</Link>
+            <Link to="https://calendly.com/contact-pinnacle/book-a-meeting"
+                  rel="noreferrer"              
+                  className="cta-button text-lg">
+                  Get Started
+                </Link>
             </div>
        
           </header>
