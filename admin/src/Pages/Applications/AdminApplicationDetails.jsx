@@ -2,12 +2,17 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 
+
 const AdminApplicationDetails = () => {
     const { id } = useParams();
     const navigate = useNavigate();
     const [application, setApplication] = useState(null);
     const [user, setUser] = useState(null);
+    const [userId, setUserId] = useState(null);
     const [statusMessage, setStatusMessage] = useState('');
+    const [profile, setProfile] = useState(null);
+    const [job, setJob] = useState(null);
+    const [jobId, setJobId] = useState(null);
 
     useEffect(() => {
         fetchApplicationDetails();
@@ -17,20 +22,42 @@ const AdminApplicationDetails = () => {
         try {
             const response = await axios.get(`${import.meta.env.VITE_LOCALHOST}/application/detail/${id}`);
             setApplication(response.data);
-            // console.log(response.data.userId);
-            fetchUserDetails(response.data.userId);
+            setJobId(response.data.jobId);
+            setUserId(response.data.userId);
+            
         } catch (error) {
             console.error('Error fetching application details:', error);
         }
     };
-
-    const fetchUserDetails = async (userId) => {
+    useEffect(() => {
+        if (jobId) {
+            fetchJobDetails();
+        }
+    }, [jobId]);
+    const fetchJobDetails = async () => {
         try {
-            const response = await axios.get(`/admin/user/${userId}`);
-            setUser(response.data);
-            console.log(response);
+            console.log(jobId);
+            const response = await axios.get(`${import.meta.env.VITE_LOCALHOST}/job/${jobId}`);
+            setJob(response.data);
+            console.log(response.data);
         } catch (error) {
-            console.error('Error fetching user details:', error);
+            console.error('Error fetching job details:', error);
+        }
+    };
+
+    useEffect(() => {
+        if (userId) {
+            fetchUserPlan(userId);
+        }
+    }, [userId]);
+
+    const fetchUserPlan = async (userId) => {
+        try {
+            const response = await axios.get(`/admin/currentplan/${userId}`);
+            setUser(response.data.user);
+            setProfile(response.data.profile);
+        } catch (error) {
+            console.log(error);
         }
     };
 
@@ -50,7 +77,7 @@ const AdminApplicationDetails = () => {
         }
     };
 
-    if (!application || !user) return <div>Loading...</div>;
+    if (!application || !user || !profile) return <div>Loading...</div>;
 
     return (
         <div className="min-h-screen bg-gray-100 p-6">
@@ -61,13 +88,24 @@ const AdminApplicationDetails = () => {
                     <h2 className="text-2xl font-bold mb-4">Applicant Information</h2>
                     <p className="mb-2"><span className="font-semibold">Name:</span> {user.name}</p>
                     <p className="mb-2"><span className="font-semibold">Email:</span> {user.email}</p>
-                    <p className="mb-2"><span className="font-semibold">Phone:</span> {user.phone}</p>
-                    <p className="mb-2"><span className="font-semibold">Address:</span> {user.address}</p>
-                    <p className="mb-2"><span className="font-semibold">CV:</span> <a href={user.cv} target="_blank" className="text-[#B1C000] hover:underline">View CV</a></p>
+                     </div>
+                <div className="mb-6">
+                    <h2 className="text-2xl font-bold mb-4">Profile Information</h2>
+                    <p className="mb-2"><span className="font-semibold">Full Name:</span> {profile.fullName}</p>
+                    <p className="mb-2"><span className="font-semibold">Phone Number:</span> {profile.phoneNumber}</p>
+                    <p className="mb-2"><span className="font-semibold">Experience:</span> {profile.experience}</p>
+                    <p className="mb-2"><span className="font-semibold">Specialization:</span> {profile.specialization}</p>
+                    <p className="mb-2"><span className="font-semibold">Education:</span> {profile.education}</p>
+                    <p className="mb-2"><span className="font-semibold">Resume:</span> <a href={profile.resume} target="_blank" className="text-[#B1C000] hover:underline">View Resume</a></p>
+                    <p className="mb-2"><span className="font-semibold">LinkedIn:</span> <a href={profile.linkedIn} target="_blank" className="text-[#B1C000] hover:underline">View LinkedIn</a></p>
+                    <p className="mb-2"><span className="font-semibold">Organization:</span> {profile.organization}</p>
+                    <p className="mb-2"><span className="font-semibold">Contact Method:</span> {profile.contactMethod}</p>
+                    <p className="mb-2"><span className="font-semibold">Additional Info:</span> {profile.additionalInfo}</p>
+                    <p className="mb-2"><span className="font-semibold">Referral Source:</span> {profile.referralSource}</p>
                 </div>
                 <div className="mb-6">
                     <h2 className="text-2xl font-bold mb-4">Application Information</h2>
-                    <p className="mb-2"><span className="font-semibold">Job Title:</span> {application.jobId.title}</p>
+                    <p className="mb-2"><span className="font-semibold">Job Title:</span> {job.title}</p>
                     <p className="mb-2"><span className="font-semibold">Cover Letter:</span></p>
                     <p className="bg-gray-100 p-2 rounded">{application.coverLetter}</p>
                 </div>

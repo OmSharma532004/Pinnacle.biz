@@ -20,12 +20,15 @@ const PlanStatus = () => {
   const [selectedPlanIndex, setSelectedPlanIndex] = useState(0);
 
   useEffect(() => {
+    console.log("userId", userId);
     const fetchUserPlan = async () => {
       try {
         const response = await axios.get(`/admin/currentplan/${userId}`);
         setUserPlan(response.data.plan);
         setUser(response.data.user);
         setProfile(response.data.profile);
+        console.log(response.data.profile);
+        console.log(response.data);
         setSelectedPlanIndex(0); // Default to the first plan
       } catch (error) {
         console.log(error);

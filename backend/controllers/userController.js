@@ -224,52 +224,57 @@ for reaching out to us.</p> <p> <br> Best regards,</p><p>Pinnacle Solutions</p><
 }
 
 module.exports.createProfile = async (req, res) => {
-    const profileCheck = await profileModel.findOne({ userId: req.userId });
-    if (profileCheck ) {
-        if (req.file?.path) fs.unlinkSync(req.file?.path);
-        throw new ExpressError("Profile already exists", 400);
-    }
-
-    let { fullName, phoneNumber, education, experience, specialization,
-         linkedIn, contactMethod, additionalInfo, referralSource, organization } = req.body;
-
-    if (!fullName || !phoneNumber || !education || !experience || !specialization || 
-        !contactMethod || !organization) {
+    try {
+        const profileCheck = await profileModel.findOne({ userId: req.userId });
+        if (profileCheck) {
             if (req.file?.path) fs.unlinkSync(req.file?.path);
-            throw new ExpressError("All mandatory fields are required", 400);
+            throw new ExpressError("Profile already exists", 400);
+        }
+
+        let { fullName, phoneNumber, education, experience, specialization,
+            linkedIn, contactMethod, additionalInfo, referralSource, organization } = req.body;
+
+        if (!fullName || !phoneNumber || !education || !experience || !specialization ||
+            !contactMethod || !organization) {
+                if (req.file?.path) fs.unlinkSync(req.file?.path);
+                throw new ExpressError("All mandatory fields are required", 400);
+        }
+
+        let resumeUrl = '';
+
+        if (req.file?.path) {
+            const uploadResult = await uploadOnCloudinary(req.file.path);
+            if (uploadResult) {
+                resumeUrl = uploadResult.secure_url; // Ensure only the secure URL is stored
+            }
+        }
+
+        const newProfile = new profileModel({
+            userId: req.userId,
+            fullName,
+            phoneNumber,
+            education,
+            experience,
+            specialization,
+            linkedIn,  // This will be undefined if not provided
+            contactMethod,
+            additionalInfo,
+            referralSource,
+            organization,
+            resume: resumeUrl  // Store only the secure URL
+        });
+
+        await newProfile.save();
+
+        const user = await User.findById(req.userId);
+        user.profile = newProfile._id;
+        await user.save();
+
+        res.status(200).json({ message: "Profile created successfully", user: user });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Internal Server Error" });
     }
-
-    let resume = req.file?.path;
-
-    if (resume) {
-        resume = await uploadOnCloudinary(resume);        
-      
-    }
-
-
-    const newProfile = new profileModel({
-        userId: req.userId,
-        fullName,
-        phoneNumber,
-        education,
-        experience,
-        specialization,
-        linkedIn,  // This will be undefined if not provided
-        contactMethod,
-        additionalInfo,
-        referralSource,
-        organization,
-        resume  // This will be undefined if not provided
-    });
-
-    await newProfile.save();
-
-    const user = await User.findById(req.userId);
-    user.profile = newProfile._id;
-    await user.save();
-
-    res.status(200).json({ message: "Profile created successfully", user: user });  
-
 }
 
 

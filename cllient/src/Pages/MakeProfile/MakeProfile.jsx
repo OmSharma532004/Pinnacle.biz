@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
-import { updateFormData } from "../../store/slices/formDataSlice";
 import { useDispatch } from 'react-redux';
 import 'react-phone-number-input/style.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { PhoneInput } from 'react-international-phone';
@@ -11,11 +10,10 @@ import 'react-international-phone/style.css';
 import PhoneComponent from '../../components/PhoneComponent/PhoneComponent';
 
 const FormPage = () => {
-
   const [formData, setFormData] = useState({
     phoneNumber: '',
     specialization: '',
-    file: '',
+    file: null,
     experience: '',
     education: '',
     organization: '',
@@ -33,13 +31,12 @@ const FormPage = () => {
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem('user')) || {};
-    setFormData({
-      ...formData,
+    setFormData((prevFormData) => ({
+      ...prevFormData,
       email: user.email || '',
       fullName: user.name || ''
-    });
+    }));
   }, []); 
-
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -70,8 +67,6 @@ const FormPage = () => {
     if (!formData.contactMethod) newErrors.contactMethod = 'Preferred contact method is required';
     if (!formData.phoneNumber) newErrors.phoneNumber = 'Phone Number is required';
     if (formData.linkedIn && !validateLinkedIn(formData.linkedIn)) newErrors.linkedIn = 'Invalid LinkedIn profile URL';
-    
-
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -89,23 +84,11 @@ const FormPage = () => {
     }
 
     const newForm = new FormData();
+    for (const key in formData) {
+      newForm.append(key, formData[key]);
+    }
 
-    newForm.append('fullName', formData.fullName);
-    newForm.append('email', formData.email);
-    newForm.append('phoneNumber', formData.phoneNumber);
-    newForm.append('file', formData.file);
-    newForm.append('linkedIn', formData.linkedIn);
-    newForm.append('experience', formData.experience);
-    newForm.append('education', formData.education);
-    newForm.append('organization', formData.organization);
-    newForm.append('contactMethod', formData.contactMethod);
-    newForm.append('additionalInfo', formData.additionalInfo);
-    newForm.append('referralSource', formData.referralSource);
-    newForm.append('specialization', formData.specialization); 
-
-    dispatch(updateFormData(formData));
-
-    try{
+    try {
       const response = await axios.post('/user/createProfile', newForm, {
         headers: {
           'Content-Type': 'multipart/form-data',
@@ -120,7 +103,7 @@ const FormPage = () => {
           autoClose: 2000,
           hideProgressBar: true,
         });
-        const {user} = response.data;
+        const { user } = response.data;
         localStorage.setItem('user', JSON.stringify(user));
         navigate('/dashboard');
       }

@@ -9,6 +9,7 @@ const AdminApplications = () => {
     useEffect(() => {
         fetchApplications();
     }, []);
+    
 
     const fetchApplications = async () => {
         try {
@@ -38,7 +39,7 @@ const AdminApplications = () => {
                             {applications.map((app) => (
                                 <tr key={app._id} className={`border-b ${app.status !== 'pending' ? 'opacity-50' : ''}`}>
                                     <td className="px-4 py-2">{app.jobId.title}</td>
-                                    <td className="px-4 py-2">{app.userId.name}</td>
+                                    {/* <td className="px-4 py-2">{app.userId.name}</td> */}
                                     <td className="px-4 py-2 capitalize">{app.status}</td>
                                     <td className="px-4 py-2">
                                         <Link
