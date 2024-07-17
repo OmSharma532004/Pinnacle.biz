@@ -69,7 +69,7 @@ const Navbar = () => {
         <li><a href="#contact" className="hover:text-gray-600">Contact</a></li>
         {isLoggedIn ? (
           <>
-            {/* <li><a href="#" onClick={handleLogout} className="hover:text-gray-600">Logout</a></li> */}
+            <li><a href="#" onClick={handleLogout} className="hover:text-gray-600">Logout</a></li>
             <li><Link to="/dashboard" className="hover:text-gray-600 "><CgProfile style={{fontSize:"2rem"}} /></Link></li>
           </>
         ) : (
@@ -113,7 +113,7 @@ const Navbar = () => {
                 <li><a href="#contact" onClick={() => setToggle(false)} className="hover:text-gray-600">Contact</a></li>
                 {isLoggedIn ? (
                   <>
-                    {/* <li><a href="#" onClick={handleLogout} className="hover:text-gray-600">Logout</a></li> */}
+                    <li><a href="#" onClick={handleLogout} className="hover:text-gray-600">Logout</a></li>
                     <li><Link to="/dashboard" className="hover:text-gray-600"><CgProfile  style={{fontSize:"2rem"}} /></Link></li>
                   </>
                 ) : (
