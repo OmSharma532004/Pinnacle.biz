@@ -1,24 +1,21 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
-import {BrowserRouter} from 'react-router-dom'
-import {Provider} from 'react-redux'
-import {store} from './store/store.jsx'
-import axios from 'axios'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App.jsx';
+import './index.css';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { store } from './store/store.jsx';
+import axios from 'axios';
 import ReactGA from 'react-ga4';
-
+import { HelmetProvider } from 'react-helmet-async';
 
 ReactGA.initialize('G-5V1BM1T4EK');
-// Optional: To track page views, use the following line
 ReactGA.send({
   hitType: 'pageview',
   page: window.location.pathname
 });
 
-
 if (import.meta.env.DEV) {
-  //for vite application
   console.log("Running in development mode");
   axios.defaults.baseURL = import.meta.env.VITE_LOCALHOST;
 } else {
@@ -27,13 +24,23 @@ if (import.meta.env.DEV) {
 }
 axios.defaults.withCredentials = true;
 
+// Register Service Worker
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').then(registration => {
+      console.log('SW registered: ', registration);
+    }).catch(registrationError => {
+      console.log('SW registration failed: ', registrationError);
+    });
+  });
+}
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  // <React.StrictMode>
-    <Provider store={store}>
-      <BrowserRouter>
+  <Provider store={store}>
+    <BrowserRouter>
+      <HelmetProvider>
         <App />
-      </BrowserRouter>
-    </Provider>
-  /* </React.StrictMode>, */
-)
+      </HelmetProvider>
+    </BrowserRouter>
+  </Provider>
+);

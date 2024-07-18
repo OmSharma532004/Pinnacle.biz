@@ -7,6 +7,8 @@ import { login } from '../../../store/slices/authSlice';
 import axios from 'axios';
 import { FcGoogle } from "react-icons/fc";
 import Loader from '../../../components/Loader/Loader';
+import { Helmet } from 'react-helmet';
+import MetaTags from '../../../components/MetaTag';
 
 const Login = () => {
   const [loading, setLoading] = useState(false);
@@ -131,6 +133,7 @@ const Login = () => {
 
   return (
     <div className="login-container">
+       <MetaTags/>
       {loading && <Loader loading={loading} message={'Logging in...'}/>}
       <form onSubmit={handleSubmit} className="login-form">
         <h2>Login</h2>

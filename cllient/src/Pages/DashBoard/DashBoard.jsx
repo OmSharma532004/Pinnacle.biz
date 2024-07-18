@@ -153,6 +153,8 @@ import Profile from "../Profile/Profile";
 import axios from "axios";
 import Plans from "../Plans/Plans";
 import OrderHistory from "./OrderHistory";
+import { Helmet } from 'react-helmet';
+import MetaTags from "../../components/MetaTag";
 
 const Dashboard = () => {
   const [user, setUser] = useState(null);
@@ -209,6 +211,7 @@ const Dashboard = () => {
   };
 
   const renderContent = () => {
+    <MetaTags/>
     switch (currentView) {
       // case "Plan Status":
       //   return (

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom'; // Import Link
 import Loader from '../../components/Loader/Loader';
+import MetaTags from '../../components/MetaTag';
 
 const UserProfile = () => {
   const navigate = useNavigate();
@@ -58,6 +59,7 @@ const UserProfile = () => {
 
   return (
     <div className="container mx-auto">
+      <MetaTags/>
       <Loader loading={loading} message={'Loading profile'} />
       <h1 className="text-3xl font-bold mb-4">User Profile</h1>
       <div className="p-6 bg-gray-100 rounded-lg">

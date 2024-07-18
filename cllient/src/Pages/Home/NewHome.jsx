@@ -6,6 +6,8 @@ import Navbar from '../../components/Navbar/Navbar';
 import About2 from './Components/About/About';
 import SuccessStories from './Components/Success/SuccessStories';
 import Popup from './Components/Popup/Popup';
+import { Helmet } from 'react-helmet';
+import MetaTags from '../../components/MetaTag';
 
 const Elevate = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -24,6 +26,7 @@ const Elevate = () => {
 
   return (
     <div className="app">
+       <MetaTags/>
       <Navbar />
       <div className="mt-[50px]"></div>
       <Header />

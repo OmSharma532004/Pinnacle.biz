@@ -1,10 +1,12 @@
 import SocialMedia from "../components/SocialMedia";
 import NavigationDots from "../components/NavigationDots";
+import MetaTags from "../components/MetaTag";
 
 
 const AppWrap = (Component, idName, classNames) => function HOC() {
   return (
     <div id={idName} className={`app__container ${classNames}`}>
+      <MetaTags/>
         <SocialMedia />
         <div className='app__wrapper app__flex'>
             <Component />            

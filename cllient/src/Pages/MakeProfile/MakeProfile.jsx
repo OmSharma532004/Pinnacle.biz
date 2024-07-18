@@ -8,6 +8,7 @@ import { PhoneInput } from 'react-international-phone';
 import 'react-international-phone/style.css';
 
 import PhoneComponent from '../../components/PhoneComponent/PhoneComponent';
+import MetaTags from '../../components/MetaTag';
 
 const FormPage = () => {
   const [formData, setFormData] = useState({
@@ -119,6 +120,7 @@ const FormPage = () => {
 
   return (
     <div className="container mx-auto px-4 py-8 max-w[90%] lg:max-w-[80%]">
+      <MetaTags/>
       <h1 className="text-3xl font-semibold mb-6">Create Profile</h1>
       <form className="space-y-6">        
         <div>

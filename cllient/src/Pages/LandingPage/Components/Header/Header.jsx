@@ -8,6 +8,10 @@ import Rocket from "../../../../assets/rocket.png";
 import handshake from "../../../../assets/handshake.png";
 import trophy from "../../../../assets/trophy.webp";
 import Ticker from "../../../Home/Components/Ticker/Ticker";
+import SocialMedia from "../../../../components/SocialMedia";
+import { FaXTwitter } from "react-icons/fa6";
+import { BsLinkedin, BsInstagram } from "react-icons/bs";
+
 
 const scalevarients = {
   whileInView: {
@@ -100,6 +104,17 @@ const Header = () => {
           ))}
         </motion.div>
       </div>
+      <div className=" flex items-center justify-center gap-10 text-4xl text-[#B1C000]">
+    <a target="_blank" rel="noreferrer" href='https://x.com/Pinnaclesol'>
+      <FaXTwitter />
+    </a>
+    <a href='https://www.linkedin.com/company/getpinnacle/mycompany/verification/' target="_blank" rel="noreferrer">
+      <BsLinkedin />
+    </a>
+    <a href = 'https://www.instagram.com/pinnaclebiz_everythingpeople/' target="_blank" rel="noreferrer">
+      <BsInstagram />
+    </a>
+  </div>
       <div className="ticker-container">
         <Ticker offers={offers} />
       </div>
