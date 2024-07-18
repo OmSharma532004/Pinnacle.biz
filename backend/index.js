@@ -10,19 +10,19 @@ const cookieParser = require('cookie-parser');
 const expressError = require("./utils/ExpressError");
 const passport = require('passport');
 const path = require('path');
-const prerender = require('prerender-node'); // Add this line
+const prerender = require('prerender-node'); // Correctly require prerender-node
 require("./utils/crons");
 
 const DB_URL = process.env.DB_URL;
 mongoose.connect(DB_URL);
 const db = mongoose.connection;
-db.on("error", console.error.bind(console, "connection error:"))
+db.on("error", console.error.bind(console, "connection error:"));
 db.once("open", () => {
-    console.log("Database connected")
+    console.log("Database connected");
 });
 
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname,'views'));
+app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -33,8 +33,18 @@ app.use(cors({
 }));
 app.use(passport.initialize());
 
-// Prerender middleware setup
-app.use(prerender.set('prerenderToken', process.env.PRERENDER_TOKEN)); // Add this line
+console.log('Prerender Token:', process.env.PRERENDER_TOKEN);
+
+// Correctly use Prerender middleware
+app.use(prerender.set('prerenderToken', process.env.PRERENDER_TOKEN));
+
+// Add canonicalization redirect
+app.use((req, res, next) => {
+    if (req.headers.host === 'pinnacle.biz' && !req.secure) {
+        return res.redirect(301, `https://www.pinnacle.biz${req.url}`);
+    }
+    next();
+});
 
 const authRoutes = require("./routes/authRoutes");
 app.use('/auth', authRoutes);
@@ -66,7 +76,7 @@ app.use((err, req, res, next) => {
     res.status(statusCode).json(err.message);
 });
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4000;
 app.listen(port, () => {
     console.log(`Server started on port ${port}`);
 });
