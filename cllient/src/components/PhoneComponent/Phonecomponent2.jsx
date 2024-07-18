@@ -98,7 +98,7 @@ const MuiPhone = ({ value, onChange, ...restProps }) => {
             value={country.iso2}
             onChange={(e) => setCountry(e.target.value)}
             renderValue={(value) => (
-              <FlagImage iso2={value} style={{ display: 'flex' }} />
+              <FlagImage title='flag' alt='flag' iso2={value} style={{ display: 'flex' }} />
             )}
           >
             {defaultCountries.map((c) => {

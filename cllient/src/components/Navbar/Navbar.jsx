@@ -43,7 +43,7 @@ const Navbar = () => {
   return (
     <nav className="bg-white bg-opacity-100 p-4 fixed top-0 left-0 right-0 z-50 flex justify-between items-center">
       <div className="flex items-center">
-        <img onClick={() => { window.location.href = "/" }} src={logo} alt="logo" className="w-[100px] h-[75px] mr-4" />
+        <img onClick={() => { window.location.href = "/" }} src={logo} alt="logo" title="pinnacle" className="w-[100px] h-[75px] mr-4" />
       </div>
 
       <ul className="hidden md:flex items-center justify-center space-x-12 text-gray-800">

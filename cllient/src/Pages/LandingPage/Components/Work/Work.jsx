@@ -181,7 +181,7 @@ const Work = () => {
             <div className={`app__work-item app__flex ${expanded[currentIndex] ? 'expanded' : ''}`}>
               <div className="app__work-image app__flex">
                 {work.imgUrl && (
-                  <img src={work.imgUrl} alt={work.title} />
+                  <img src={work.imgUrl} alt={work.title} title={work.title}  />
                 )}
               </div>
 

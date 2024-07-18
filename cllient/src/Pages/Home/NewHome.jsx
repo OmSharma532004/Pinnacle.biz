@@ -26,7 +26,7 @@ const Elevate = () => {
 
   return (
     <div className="app">
-       <MetaTags/>
+       {/* <MetaTags/> */}
       <Navbar />
       <div className="mt-[50px]"></div>
       <Header />

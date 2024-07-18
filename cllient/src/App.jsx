@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import './App.scss';
 import Layout from "./Layout/Layout";
 import PinnacleSolutions from "./components/PinnacleSoultions";
+import MetaTags from './components/MetaTag';
 
 const LandingPage = lazy(() => import('./Pages/LandingPage/LandingPage'));
 const Elevate = lazy(() => import('./Pages/Home/NewHome'));
@@ -14,7 +15,9 @@ const Contingency = lazy(() => import('./Pages/Cotingency/ContingencySearch'));
 
 const App = () => {
   return (
+    
     <Suspense fallback={<div>Loading...</div>}>
+      <MetaTags/>
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/elevate" element={<Elevate />} />

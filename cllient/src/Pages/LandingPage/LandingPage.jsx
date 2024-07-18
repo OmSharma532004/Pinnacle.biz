@@ -9,7 +9,7 @@ import MetaTags from '../../components/MetaTag';
 const LandingPage = () => {
   return (
     <div className="app mt-[67px] lg:mt-[60.8px]">
-     <MetaTags/>
+     {/* <MetaTags/> */}
       <Navbar />
       <Header />
       <About />

@@ -99,7 +99,7 @@ const Header = () => {
         >
           {[Rocket, handshake, trophy].map((circle, index) => (
               <div className="circle-cmp app__flex hidden md:flex" key={`circle-${index}`}>
-                <img src={circle} alt="profile_bg" />
+                <img src={circle} alt="profile_bg" title="pinnacle"  />
               </div>
           ))}
         </motion.div>

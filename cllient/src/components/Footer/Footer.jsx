@@ -111,7 +111,7 @@ const Footer = () => {
 
         <div className="left">
         <div className=' flex flex-col items-center justify-center'>
-        <img src={logo} alt="Pinnacle Logo" />
+        <img src={logo} alt="Pinnacle Logo" title='pinnacle' />
         
      
 
@@ -171,7 +171,7 @@ const Footer = () => {
   <div className=' flex flex-col w-full mb-5 justify-center gap-5 '>
        <div className="flex md:flex-row flex-col items-center gap-5 md:items-start w-full justify-around text-gray-600 text-lg ">             
             <div className='section flex flex-col items-center justify-center'>
-              <h1 className=' text-xl mb-4 text-[#B1C000] '> Quick Links</h1>
+              <h3 className=' text-xl mb-4 text-[#B1C000] '> Quick Links</h3>
               <ul>
                 <li><Link>Home</Link></li>
                 <li><Link>About Us</Link></li>
@@ -181,7 +181,7 @@ const Footer = () => {
 
             </div>
             <div className='section flex flex-col items-center justify-center'>
-              <h1 className=' text-xl mb-4 text-[#B1C000] '>Legal</h1>
+              <h3 className=' text-xl mb-4 text-[#B1C000] '>Legal</h3>
               <ul>
                 <li><Link>Disclaimer Policy</Link></li>
                 <li><Link>Cookie Policy</Link></li>
@@ -191,7 +191,7 @@ const Footer = () => {
 
             </div>
             <div className='section flex flex-col items-center justify-center'>
-              <h1 className=' text-xl mb-4 text-[#B1C000] '>Information</h1>
+              <h3 className=' text-xl mb-4 text-[#B1C000] '>Information</h3>
               <ul className=' flex items-start justify-center gap-5' >
                <div>
                <li><Link>Jobs in Delhi</Link></li>

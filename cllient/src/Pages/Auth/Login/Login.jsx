@@ -133,7 +133,7 @@ const Login = () => {
 
   return (
     <div className="login-container">
-       <MetaTags/>
+       {/* <MetaTags/> */}
       {loading && <Loader loading={loading} message={'Logging in...'}/>}
       <form onSubmit={handleSubmit} className="login-form">
         <h2>Login</h2>
