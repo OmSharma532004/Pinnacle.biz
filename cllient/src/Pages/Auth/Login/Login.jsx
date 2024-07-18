@@ -163,10 +163,10 @@ const Login = () => {
           />
         </div>
         <button type="submit">Login</button>
-        {/* <div className='flex justify-center m-2 text-lg'> Or</div>
+        <div className='flex justify-center m-2 text-lg'> Or</div>
         <a className="googleButton" onClick={googleAuth}>
 						<span className="icon"><FcGoogle /></span> &nbsp; Sign in with Google
-        </a>    */}
+        </a>   
         <div className='auth-link'>
           <Link to="/signup" className="signup">
             Don&apos;t have an account? Signup

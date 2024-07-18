@@ -3,10 +3,14 @@ const User = require("../models/userModel.js");
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 
+const callbackURL = process.env.NODE_ENV === 'production'
+  ? 'https://api.pinnacle.biz/auth/google/callback'
+  : 'http://localhost:4000/auth/google/callback';
+
 passport.use(new GoogleStrategy({
     clientID: "646102159744-39spi62n4lc3orsasooie7je0uka1hc9.apps.googleusercontent.com",
-    clientSecret: "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",
-    callbackURL: "/auth/google/callback"
+    clientSecret: "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",
+    callbackURL: callbackURL
   },
   async (accessToken, refreshToken, profile, done) => {
     done(null, profile);

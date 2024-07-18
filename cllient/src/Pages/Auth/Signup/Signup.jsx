@@ -129,10 +129,10 @@ const Signup = () => {
         </div>
         
         <button type="submit">Signup</button>
-        {/* <div className='flex justify-center m-2 text-lg'> Or</div>
+        <div className='flex justify-center m-2 text-lg'> Or</div>
         <a className="googleButton" onClick={googleAuth}>
 						<span className="icon"><FcGoogle /></span> &nbsp; Sign in with Google
-        </a>    */}
+        </a>   
         <div className='auth-link'>
         <Link to="/login" className="login">
             Already have an account? Login
