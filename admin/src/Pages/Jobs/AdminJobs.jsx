@@ -29,6 +29,15 @@ const AdminJobs = () => {
         }
     };
 
+    const copyUrlToClipboard = (id) => {
+        const url = `https://pinnacle.biz/job/${id}`;
+        navigator.clipboard.writeText(url).then(() => {
+            alert('URL copied to clipboard');
+        }).catch(err => {
+            console.error('Error copying URL:', err);
+        });
+    };
+
     return (
         <div className="min-h-screen bg-gray-100 p-6">
             <h1 className="text-3xl font-bold text-[#B1C000] mb-6">Admin: Manage Jobs</h1>
@@ -53,6 +62,7 @@ const AdminJobs = () => {
                                         <Link to={`/admin/edit/${job._id}`} className="text-blue-600 hover:underline">Edit</Link>
                                         <button onClick={() => deleteJob(job._id)} className="text-red-600 hover:underline">Delete</button>
                                         <Link to={`/admin/view/${job._id}`} className="text-[#B1C000] hover:underline">View</Link>
+                                        <button onClick={() => copyUrlToClipboard(job._id)} className="text-green-600 hover:underline">Share</button>
                                     </td>
                                 </tr>
                             ))}
