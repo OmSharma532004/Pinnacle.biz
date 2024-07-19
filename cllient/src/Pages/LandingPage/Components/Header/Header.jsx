@@ -84,15 +84,15 @@ const Header = () => {
                 </Link>
               </div>
             </header>
-            <motion.img
+            {/* <motion.img
               whileInView={{scale: [0,1]}}
               transition={{duration: 1, ease: "easeInOut"}}
               src={images.circle}
               alt="profile_circle"
               className="overlay_circle"
-            />
+            /> */}
         </motion.div>
-        <motion.div
+        {/* <motion.div
           variant={scalevarients}
           whileInView={scalevarients.whileInView}
           className="app__header-circles  "
@@ -102,7 +102,7 @@ const Header = () => {
                 <img src={circle} alt="profile_bg" title="pinnacle"  />
               </div>
           ))}
-        </motion.div>
+        </motion.div> */}
       </div>
       <div className=" flex items-center justify-center gap-10 text-4xl text-[#B1C000]">
     <a target="_blank" rel="noreferrer" href='https://x.com/Pinnaclesol'>

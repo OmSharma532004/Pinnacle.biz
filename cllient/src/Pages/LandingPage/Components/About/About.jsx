@@ -4,11 +4,19 @@ import './About.scss';
 import { images } from '../../../../constants';
 import { AppWrap, MotionWrap } from '../../../../Wrapper';
 import expertGuidance from '../../../../assets/expertGuidance.png';
+import i1 from '../../../Home/expect_img/6.png';
+import i2 from '../../../Home/expect_img/7.png';
+import i5 from '../../../Home/expect_img/10.png';
+import i3 from '../../../Home/expect_img/8.png';
+import i4 from '../../../Home/expect_img/9.png';
+import i6 from '../../../Home/expect_img/2.png';
+import i7 from '../../../Home/expect_img/3.png';
+
 
 const abouts = [
-  { title: 'Expertise & Insight', description: 'With over a decade of expertise, we possess a profound understanding of diverse industries, business segments, and market dynamics, enabling us to provide superior <i>#talentacquisition</i> and strategic business guidance.', imgUrl: expertGuidance },
-  { title: 'Tailored Solutions', description: 'Acknowledging the distinctiveness of every business, we deliver <i>#bespoke</i> services tailored to meet specific objectives. From executive search to strategic advisory, we ensure personalized solutions that drive success.', imgUrl: images.about04 },
-  { title: 'Proven Success', description: 'With a proven track record of helping numerous companies build exceptional teams and placing hundreds of candidates, we consistently deliver impactful results that drive growth for businesses and professionals.', imgUrl: images.about02 }
+  { title: 'Expertise & Insight', description: 'With over a decade of expertise, we possess a profound understanding of diverse industries, business segments, and market dynamics, enabling us to provide superior <i>#talentacquisition</i> and strategic business guidance.', imgUrl: i1 },
+  { title: 'Tailored Solutions', description: 'Acknowledging the distinctiveness of every business, we deliver <i>#bespoke</i> services tailored to meet specific objectives. From executive search to strategic advisory, we ensure personalized solutions that drive success.', imgUrl: i2 },
+  { title: 'Proven Success', description: 'With a proven track record of helping numerous companies build exceptional teams and placing hundreds of candidates, we consistently deliver impactful results that drive growth for businesses and professionals.', imgUrl: i3 }
 ];
 
 const About = () => {
