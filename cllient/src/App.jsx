@@ -1,9 +1,11 @@
-import React, { Suspense, lazy } from 'react';
+// src/App.js
+import React, { Suspense, lazy, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.scss';
 import Layout from "./Layout/Layout";
 import PinnacleSolutions from "./components/PinnacleSoultions";
 import MetaTags from './components/MetaTag';
+import CookieConsent from './components/CookieConsent/CookieConsent';
 
 const LandingPage = lazy(() => import('./Pages/LandingPage/LandingPage'));
 const Elevate = lazy(() => import('./Pages/Home/NewHome'));
@@ -20,9 +22,30 @@ const NotFound = () => (
 );
 
 const App = () => {
+  const [cookieConsent, setCookieConsent] = useState(null);
+
+  const handleConsent = (consentType) => {
+    setCookieConsent(consentType);
+    if (consentType === 'all') {
+      // Load Google Analytics script
+      (function() {
+        var ga = document.createElement('script');
+        ga.src = 'https://www.googletagmanager.com/gtag/js?id=YOUR_TRACKING_ID';
+        document.head.appendChild(ga);
+        ga.onload = function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'YOUR_TRACKING_ID');
+        };
+      })();
+    }
+  };
+
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <MetaTags />
+      <CookieConsent onConsent={handleConsent} />
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/elevate" element={<Elevate />} />
