@@ -5,6 +5,7 @@ import Navbar from '../Navbar/Navbar';
 
 const JobList = () => {
     const [jobs, setJobs] = useState([]);
+    const [filteredJobs, setFilteredJobs] = useState([]);
     const [filter, setFilter] = useState({
         date: '',
         location: '',
@@ -19,6 +20,7 @@ const JobList = () => {
         try {
             const response = await axios.get(`${import.meta.env.VITE_LOCALHOST}/job/all`);
             setJobs(response.data);
+            setFilteredJobs(response.data); // Initialize filteredJobs with all jobs
         } catch (error) {
             console.error('Error fetching jobs:', error);
         }
@@ -32,8 +34,34 @@ const JobList = () => {
     };
 
     const handleFilterApply = () => {
-        // Apply the filter logic here, currently it's just refetching all jobs
-        fetchJobs();
+        let filtered = [...jobs];
+
+        if (filter.date) {
+            filtered = filtered.sort((a, b) => {
+                if (filter.date === 'recent') {
+                    return new Date(b.posted) - new Date(a.posted);
+                } else if (filter.date === 'oldest') {
+                    return new Date(a.posted) - new Date(b.posted);
+                }
+                return 0;
+            });
+        }
+
+        if (filter.location) {
+            filtered = filtered.filter(job => job.location.toLowerCase().includes(filter.location.toLowerCase()));
+        }
+
+        if (filter.experience) {
+            filtered = filtered.filter(job => {
+                const experienceRange = filter.experience.split('-');
+                const minExperience = parseInt(experienceRange[0], 10);
+                const maxExperience = experienceRange[1] ? parseInt(experienceRange[1], 10) : Infinity;
+                const jobExperience = parseInt(job.experience.split('-')[0], 10);
+                return jobExperience >= minExperience && jobExperience <= maxExperience;
+            });
+        }
+
+        setFilteredJobs(filtered);
     };
 
     return (
@@ -50,9 +78,14 @@ const JobList = () => {
                         </select>
                         <select name="location" value={filter.location} onChange={handleFilterChange} className="border border-gray-300 p-2 rounded focus:outline-none focus:border-green-500">
                             <option value="">Locations</option>
-                            <option value="metros">Metros</option>
-                            <option value="india">Anywhere in India/Multiple Locations</option>
-                            <option value="international">Overseas/International</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Gurugram">Gurugram</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Bangalore">Bangalore</option>
+                            <option value="Hyderabad">Hyderabad</option>
+                            <option value="Chennai">Chennai</option>
+                            <option value="Kolkata">Kolkata</option>
+                            <option value="Pune">Pune</option>
                         </select>
                         <select name="experience" value={filter.experience} onChange={handleFilterChange} className="border border-gray-300 p-2 rounded focus:outline-none focus:border-green-500">
                             <option value="">Experience</option>
@@ -64,7 +97,7 @@ const JobList = () => {
                         <button onClick={handleFilterApply} className="border border-[#B1C000] p-2 rounded bg-[#B1C000] text-white">Filter</button>
                     </div>
                 </div>
-                {jobs.map((job) => (
+                {filteredJobs.map((job) => (
                     <Link to={`/job/${job._id}`} key={job._id}>
                         <div className="flex flex-col sm:flex-row items-start sm:items-center p-4 border-b hover:bg-gray-50 transition duration-150">
                             <div className="flex-1">

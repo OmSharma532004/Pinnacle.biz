@@ -148,7 +148,7 @@ const Work = () => {
               onClick={() => handleFilterClick(item)}
               className={`app__work-filter-item app__flex p-text text-lg ${activeFilter === item ? 'item-active' : ''}`}
             >
-              {item}
+             <h3> {item}</h3>
             </div>
           ))
         )}
@@ -159,7 +159,7 @@ const Work = () => {
               onClick={() => handleFilterClick(item)}
               className={`app__work-filter-item app__flex p-text md:w-[350px] text-center text-lg ${activeFilter === item ? 'item-active' : ''}`}
             >
-              {item}
+              <h3>{item}</h3>
             </div>
           ))
         )}

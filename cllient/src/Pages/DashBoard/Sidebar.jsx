@@ -35,7 +35,7 @@ const Sidebar = ({ setCurrentView }) => {
         localStorage.removeItem("user");
         localStorage.removeItem("expiresIn");
         dispatch(logout());
-        window.location.reload();
+        window.location.href="/login";
       }
     } catch (error) {
       localStorage.removeItem("user");
