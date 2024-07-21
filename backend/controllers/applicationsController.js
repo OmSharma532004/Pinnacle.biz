@@ -6,7 +6,7 @@ const nodemailer = require('nodemailer');
 // Apply for a job
 const applyForJob = async (req, res) => {
     try {
-        const { userId, jobId, coverLetter } = req.body;
+        const { userId, jobId, coverLetter,preferences } = req.body;
 
         // Check if the job exists
         const job = await Job.findById(jobId);
@@ -19,7 +19,9 @@ const applyForJob = async (req, res) => {
 
         ({$and: [{userId: userId}, {jobId: jobId}]});
         if (applicationExists) {
-            return res.status(400).json({ message: 'You have already applied for this job' });
+            return res.status(400).json({ 
+                success: false,
+                message: 'You have already applied for this job' });
         }
 
 
@@ -27,7 +29,8 @@ const applyForJob = async (req, res) => {
         const newApplication = new Application({
             userId,
             jobId,
-            coverLetter
+            coverLetter,
+          
         });
 
         // Save the application to the database

@@ -47,7 +47,7 @@ const Navbar = () => {
         <img onClick={() => { window.location.href = "/" }} src={logo} alt="logo" title="pinnacle" className="w-[100px] h-[75px] mr-4" />
       </div>
 
-      <ul className="hidden md:flex items-center justify-center space-x-12 text-gray-800">
+      <ul className="hidden md:flex items-center justify-center  space-x-8 text-gray-800">
         <li className="relative group">
           <a href="#" className="hover:text-gray-600">Employer</a>
           <ul className="absolute left-1/2 transform -translate-x-1/2 top-6 hidden group-hover:flex flex-col bg-white text-gray-800 shadow-lg rounded-md w-56">

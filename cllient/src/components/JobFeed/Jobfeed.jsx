@@ -98,15 +98,16 @@ const JobList = () => {
                     </div>
                 </div>
                 {filteredJobs.map((job) => (
-                    <Link to={`/job/${job._id}`} key={job._id}>
-                        <div className="flex flex-col sm:flex-row items-start sm:items-center p-4 border-b hover:bg-gray-50 transition duration-150">
-                            <div className="flex-1">
-                                <h3 className="font-semibold text-gray-900">{job.title}</h3>
-                                <p className="text-gray-600">{job.experience} • {job.location}</p>
-                            </div>
-                            <p className="text-gray-500 mt-2 sm:mt-0">{new Date(job.posted).toLocaleDateString()}</p>
-                        </div>
-                    </Link>
+                  job.removed==false&&
+                  <Link to={`/job/${job._id}`} key={job._id}>
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center p-4 border-b hover:bg-gray-50 transition duration-150">
+                      <div className="flex-1">
+                          <h3 className="font-semibold text-gray-900">{job.title}</h3>
+                          <p className="text-gray-600">{job.experience} • {job.location}</p>
+                      </div>
+                      <p className="text-gray-500 mt-2 sm:mt-0">{new Date(job.posted).toLocaleDateString()}</p>
+                  </div>
+              </Link>
                 ))}
             </div>
         </div>

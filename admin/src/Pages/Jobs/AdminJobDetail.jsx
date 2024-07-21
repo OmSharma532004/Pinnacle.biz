@@ -35,9 +35,7 @@ const AdminJobDetails = () => {
     if (!job) return <div>Loading...</div>;
 
     return (
-        <div className="min-h-screen bg-gray-100 ">
-        
-           
+        <div className="min-h-screen bg-gray-100">
             <div className="bg-white mt-[100px] p-8 rounded-lg shadow-md w-full max-w-7xl mx-auto">
                 <h2 className="text-3xl font-bold text-[#B1C000] mb-6">{job.title}</h2>
                 <div className="mb-6">
@@ -64,16 +62,37 @@ const AdminJobDetails = () => {
                 <div className="mb-6">
                     <h3 className="text-2xl font-semibold text-gray-800 mb-4">Applications</h3>
                     {applications.length > 0 ? (
-                        <ul className="list-disc list-inside bg-gray-100 p-4 rounded-lg">
-                            {applications.map((app) => (
-                                <li key={app._id} className="text-gray-700">
-                                    <p className="mb-2"><span className="font-semibold">Name:</span> {app.userId.name}</p>
-                                    <p className="mb-2"><span className="font-semibold">Email:</span> {app.userId.email}</p>
-                                    <p className="mb-2"><span className="font-semibold">Cover Letter:</span> {app.coverLetter}</p>
-                                    <p className="mb-2"><span className="font-semibold">Status:</span> {app.status}</p>
-                                </li>
-                            ))}
-                        </ul>
+                        <div className="overflow-x-auto">
+                            <table className="min-w-full bg-white border border-gray-300">
+                                <thead>
+                                    <tr className="bg-gray-200">
+                                        <th className="py-2 px-4 border-b text-left">Name</th>
+                                        <th className="py-2 px-4 border-b text-left">Email</th>
+                                        <th className="py-2 px-4 border-b text-left">Preferences</th>
+                                        <th className="py-2 px-4 border-b text-left">Status</th>
+                                        <th className="py-2 px-4 border-b text-left">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {applications.map((app) => (
+                                        <tr key={app._id} className="hover:bg-gray-100">
+                                            <td className="py-2 px-4 border-b">{app.userId.name}</td>
+                                            <td className="py-2 px-4 border-b">{app.userId.email}</td>
+                                            <td className="py-2 px-4 border-b">{app.coverLetter}</td>
+                                            <td className="py-2 px-4 border-b">{app.status}</td>
+                                            <td className="py-2 px-4 border-b">
+                                                <Link
+                                                    to={`/admin/application/${app._id}`}
+                                                    className="text-[#B1C000] hover:underline"
+                                                >
+                                                    View Details
+                                                </Link>
+                                            </td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
                     ) : (
                         <p className="text-gray-600">No applications available.</p>
                     )}

@@ -1,19 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
 import Navbar from '../Navbar/Navbar';
-import JobApplicationDialog from './JobApplicationDialog';
 
 const JobDetails = () => {
     const { id } = useParams();
     const [job, setJob] = useState(null);
     const user = useSelector(state => state.auth.user);
-    const [isDialogOpen, setIsDialogOpen] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetchJobDetails();
-        console.log(user);
     }, [id]);
 
     const fetchJobDetails = async () => {
@@ -26,11 +24,12 @@ const JobDetails = () => {
     };
 
     const handleApplyClick = () => {
-        setIsDialogOpen(true);
-    };
-
-    const handleCloseDialog = () => {
-        setIsDialogOpen(false);
+        if (user) {
+            navigate(`/apply/${id}`);
+        } else {
+            alert('Please login to apply for the job');
+            window.location.href = '/login';
+        }
     };
 
     if (!job) return <div>Loading...</div>;
@@ -67,20 +66,9 @@ const JobDetails = () => {
                 )}
                 <div className="flex justify-between items-center">
                     <Link to="/jobs" className="text-[#B1C000] hover:underline">Back to Job Feed</Link>
-                    <button onClick={
-                        ()=>{
-                            if(user){
-                                handleApplyClick()
-                            }else{
-                                alert('Please login to apply for the job')
-
-                                window.location.href = '/login'
-                            }
-                        }
-                    } className="text-white bg-[#B1C000] py-2 px-6 rounded hover:bg-[#9DA300] transition duration-200">Apply Now</button>
+                    <button onClick={handleApplyClick} className="text-white bg-[#B1C000] py-2 px-6 rounded hover:bg-[#9DA300] transition duration-200">Apply Now</button>
                 </div>
             </div>
-            {isDialogOpen && <JobApplicationDialog job={job} user={user} onClose={handleCloseDialog} />}
         </div>
     );
 };

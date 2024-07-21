@@ -7,7 +7,7 @@ const JobForm = () => {
         experience: '',
         location: '',
         posted: '',
-        icon: '',
+       
         details: '',
         skills: ''
     });
@@ -27,7 +27,7 @@ const JobForm = () => {
             experience,
             location,
             posted,
-            icon,
+          
             details,
             skills: skills.split(',').map(skill => skill.trim())
         };
@@ -92,17 +92,7 @@ const JobForm = () => {
                                 required
                             />
                         </div>
-                        <div>
-                            <label className="block text-gray-700">Icon URL</label>
-                            <input
-                                type="text"
-                                name="icon"
-                                value={formData.icon}
-                                onChange={handleChange}
-                                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
-                                required
-                            />
-                        </div>
+                       
                     </div>
                     <div className="mb-6">
                         <label className="block text-gray-700">Details</label>

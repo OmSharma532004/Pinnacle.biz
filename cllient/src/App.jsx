@@ -6,6 +6,7 @@ import Layout from "./Layout/Layout";
 import PinnacleSolutions from "./components/PinnacleSoultions";
 import MetaTags from './components/MetaTag';
 import CookieConsent from './components/CookieConsent/CookieConsent';
+import ApplicationFormPage from './components/JobFeed/JobApplicationDialog';
 
 const LandingPage = lazy(() => import('./Pages/LandingPage/LandingPage'));
 const Elevate = lazy(() => import('./Pages/Home/NewHome'));
@@ -55,6 +56,9 @@ const App = () => {
         <Route path="/contingency" element={<Contingency />} />
         <Route path="/pinnacle-solutions" element={<PinnacleSolutions />} />
         <Route path="*" element={<Layout />} />
+        <Route path="/apply/:jobId" element={<ApplicationFormPage />} /> {/* Add this route */}
+           
+
       </Routes>
     </Suspense>
   );

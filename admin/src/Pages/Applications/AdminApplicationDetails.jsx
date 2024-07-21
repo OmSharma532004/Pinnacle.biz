@@ -106,8 +106,9 @@ const AdminApplicationDetails = () => {
                 <div className="mb-6">
                     <h2 className="text-2xl font-bold mb-4">Application Information</h2>
                     <p className="mb-2"><span className="font-semibold">Job Title:</span> {job.title}</p>
-                    <p className="mb-2"><span className="font-semibold">Cover Letter:</span></p>
+                    <p className="mb-2"><span className="font-semibold">Preferences:</span></p>
                     <p className="bg-gray-100 p-2 rounded">{application.coverLetter}</p>
+                   
                 </div>
                 <div className="flex space-x-4">
                     <button

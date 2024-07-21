@@ -20,10 +20,6 @@ const jobSchema = new Schema({
         type: Date,
         required: true
     },
-    icon: {
-        type: String,
-        required: true
-    },
     details: {
         type: String,
         required: true
@@ -35,7 +31,11 @@ const jobSchema = new Schema({
     applications: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Application'
-    }]
+    }],
+    removed: {
+        type: Boolean,
+        default: false
+    }
 
 
 

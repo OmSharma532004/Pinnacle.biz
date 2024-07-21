@@ -11,7 +11,6 @@ const registerJob = async (req, res) => {
             experience,
             location,
             posted,
-            icon,
             details,
             skills
         });
@@ -82,7 +81,7 @@ const updateJob = async (req, res) => {
 const deleteJob = async (req, res) => {
     try {
         const { id } = req.params;
-        const deletedJob = await Job.findByIdAndDelete(id);
+        const deletedJob = await Job.findByIdAndUpdate(id, {removed: true});
         if (!deletedJob) {
             return res.status(404).json({ message: 'Job not found' });
         }

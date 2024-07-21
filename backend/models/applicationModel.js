@@ -18,6 +18,10 @@ const applicationSchema = new Schema({
         type: String,
         required: true
     },
+    preferences: {
+        type: String,
+        
+    },
     status: {
         type: String,
         enum: ['pending', 'accepted', 'rejected'],
