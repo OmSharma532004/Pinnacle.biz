@@ -216,7 +216,7 @@ const Footer = () => {
                 <li><Link>Jobs in Singapore</Link></li>
                 <li><Link>Jobs in North America</Link></li>
                 <li><Link>Jobs in London</Link></li>
-                <li><Link>Jobs in Hong Kong</Link></li>
+                {/* <li><Link>Jobs in Hong Kong</Link></li> */}
                
                
               
