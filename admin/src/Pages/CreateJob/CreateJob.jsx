@@ -9,7 +9,8 @@ const JobForm = () => {
         posted: '',
        
         details: '',
-        skills: ''
+        skills: '',
+        keywords: ''
     });
 
     const handleChange = (e) => {
@@ -21,7 +22,7 @@ const JobForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const { title, experience, location, posted, icon, details, skills } = formData;
+        const { title, experience, location, posted, icon, details, skills,keywords } = formData;
         const jobData = {
             title,
             experience,
@@ -29,7 +30,8 @@ const JobForm = () => {
             posted,
           
             details,
-            skills: skills.split(',').map(skill => skill.trim())
+            skills: skills.split(',').map(skill => skill.trim()),
+            keywords: keywords.split(',').map(keyword => keyword.trim())
         };
         
         try {
@@ -115,6 +117,18 @@ const JobForm = () => {
                             required
                         />
                     </div>
+                    <div className="mb-6">
+                        <label className="block text-gray-700">Keywords (comma separated)</label>
+                        <input
+                            type="text"
+                            name="keywords"
+                            value={formData.keywords}
+                            onChange={handleChange}
+                            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                            required
+                        />
+                    </div>
+
                     <button
                         type="submit"
                         className="w-full bg-blue-600 text-white py-3 px-6 rounded-md hover:bg-blue-700 focus:outline-none focus:ring focus:border-blue-300"

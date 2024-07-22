@@ -35,6 +35,9 @@ const jobSchema = new Schema({
     removed: {
         type: Boolean,
         default: false
+    },
+    keywords: {
+        type: [String]
     }
 
 

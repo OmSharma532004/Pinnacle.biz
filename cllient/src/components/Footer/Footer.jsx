@@ -175,7 +175,11 @@ const Footer = () => {
               <ul>
                 <li><Link>Home</Link></li>
                 <li><Link>About Us</Link></li>
-                <li><Link>Blog</Link></li>
+                <li>
+                <a href='../../public/Blogs.pdf' target="_blank" rel="noreferrer">
+                    Blogs
+                    </a>
+                </li>
                 <li><Link>Contact Us</Link></li>
               </ul>
 
@@ -186,7 +190,11 @@ const Footer = () => {
                 <li><Link>Disclaimer Policy</Link></li>
                 <li><Link>Cookie Policy</Link></li>
                 <li><Link>Privacy Policy</Link></li>
-                <li><Link>SiteMap</Link></li>
+                <li>
+                  <a href='../../public/pinnacleSitemap.pdf' target="_blank" rel="noreferrer">
+                    Sitemap
+                    </a>
+                </li>
               </ul>
 
             </div>

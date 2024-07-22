@@ -64,6 +64,16 @@ const JobDetails = () => {
                         </ul>
                     </div>
                 )}
+                 {job.keywords && job.keywords.length > 0 && (
+                    <div className="mb-6">
+                        <h3 className="text-2xl font-semibold text-gray-800 mb-4">Skills Required</h3>
+                        <ul className="list-disc list-inside bg-gray-100 p-4 rounded-lg">
+                            {job.keywords.map((keyword, index) => (
+                                <li key={index} className="text-gray-700">{keyword}</li>
+                            ))}
+                        </ul>
+                    </div>
+                )}
                 <div className="flex justify-between items-center">
                     <Link to="/jobs" className="text-[#B1C000] hover:underline">Back to Job Feed</Link>
                     <button onClick={handleApplyClick} className="text-white bg-[#B1C000] py-2 px-6 rounded hover:bg-[#9DA300] transition duration-200">Apply Now</button>

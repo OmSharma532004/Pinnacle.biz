@@ -10,9 +10,10 @@ const EditJob = () => {
         experience: '',
         location: '',
         posted: '',
-        icon: '',
         details: '',
-        skills: ''
+        skills: '',
+        keywords: '',
+
     });
 
     useEffect(() => {
@@ -28,9 +29,9 @@ const EditJob = () => {
                 experience: job.experience,
                 location: job.location,
                 posted: job.posted,
-                icon: job.icon,
                 details: job.details,
-                skills: job.skills.join(', ')
+                skills: job.skills.join(', '),
+                keywords: job.keywords.join(', ')
             });
         } catch (error) {
             console.error('Error fetching job details:', error);
@@ -46,15 +47,16 @@ const EditJob = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const { title, experience, location, posted, icon, details, skills } = formData;
+        const { title, experience, location, posted, icon, details, skills,keywords } = formData;
         const jobData = {
             title,
             experience,
             location,
             posted,
-            icon,
             details,
-            skills: skills.split(',').map(skill => skill.trim())
+            skills: skills.split(',').map(skill => skill.trim()),
+            keywords: keywords.split(',').map(keyword => keyword.trim())
+
         };
         
         try {
@@ -116,7 +118,7 @@ const EditJob = () => {
                             required
                         />
                     </div>
-                    <div className="mb-4">
+                    {/* <div className="mb-4">
                         <label className="block text-gray-700">Icon URL</label>
                         <input
                             type="text"
@@ -126,7 +128,7 @@ const EditJob = () => {
                             className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
                             required
                         />
-                    </div>
+                    </div> */}
                     <div className="mb-4">
                         <label className="block text-gray-700">Details</label>
                         <textarea
@@ -143,6 +145,17 @@ const EditJob = () => {
                             type="text"
                             name="skills"
                             value={formData.skills}
+                            onChange={handleChange}
+                            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                            required
+                        />
+                    </div>
+                    <div className="mb-6">
+                        <label className="block text-gray-700">Keywords (comma separated)</label>
+                        <input
+                            type="text"
+                            name="keywords"
+                            value={formData.keywords}
                             onChange={handleChange}
                             className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
                             required

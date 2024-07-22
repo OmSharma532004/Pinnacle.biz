@@ -3,7 +3,7 @@ const Job = require('../models/jobModel');
 // Register a new job
 const registerJob = async (req, res) => {
     try {
-        const { title, experience, location, posted, icon, details, skills } = req.body;
+        const { title, experience, location, posted, icon, details, skills,keywords } = req.body;
 
         // Create a new job instance
         const newJob = new Job({
@@ -12,7 +12,8 @@ const registerJob = async (req, res) => {
             location,
             posted,
             details,
-            skills
+            skills,
+            keywords
         });
 
         // Save the job to the database

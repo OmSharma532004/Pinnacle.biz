@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 const AdminApplications = () => {
     const [applications, setApplications] = useState([]);
+    const [profiles, setProfiles] = useState({});
     const [filteredApplications, setFilteredApplications] = useState([]);
     const [filter, setFilter] = useState({
         date: 'newest',
@@ -21,8 +22,28 @@ const AdminApplications = () => {
             const sortedApplications = response.data.sort((a, b) => new Date(b.appliedDate) - new Date(a.appliedDate));
             setApplications(sortedApplications);
             setFilteredApplications(sortedApplications);
+            fetchProfiles(sortedApplications);
         } catch (error) {
             console.error('Error fetching applications:', error);
+        }
+    };
+
+    const fetchProfiles = async (applications) => {
+        const userIds = applications.map(app => app.userId._id || app.userId);
+        const uniqueUserIds = [...new Set(userIds)];
+        const profilePromises = uniqueUserIds.map(userId => 
+            axios.get(`/admin/currentplan/${userId}`)
+        );
+
+        try {
+            const profileResponses = await Promise.all(profilePromises);
+            const profilesMap = profileResponses.reduce((acc, response) => {
+                acc[response.data.user._id] = response.data.profile;
+                return acc;
+            }, {});
+            setProfiles(profilesMap);
+        } catch (error) {
+            console.error('Error fetching profiles:', error);
         }
     };
 
@@ -84,35 +105,39 @@ const AdminApplications = () => {
                         className="border border-gray-300 p-2 rounded focus:outline-none focus:border-green-500"
                     />
                 </div>
-                <div className="overflow-x-auto">
-                    <table className="w-full table-auto border-collapse">
-                        <thead>
-                            <tr className="bg-gray-200">
-                                <th className="border px-4 py-2">Applicant Name</th>
-                                <th className="border px-4 py-2">Status</th>
-                                <th className="border px-4 py-2">Date Posted</th>
-                                <th className="border px-4 py-2">Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {filteredApplications.map((app) => (
-                                <tr key={app._id} className={`border-b ${app.status !== 'pending' ? 'opacity-50' : ''} text-center`}>
-                                    <td className="border px-4 py-2">{app.userId.name}</td>
-                                    <td className="border px-4 py-2 capitalize">{app.status}</td>
-                                    <td className="border px-4 py-2">{new Date(app.appliedDate).toLocaleDateString()}</td>
-                                    <td className="border px-4 py-2">
-                                        <Link
-                                            to={`/admin/application/${app._id}`}
-                                            className="text-[#B1C000] hover:underline"
-                                        >
-                                            View Details
-                                        </Link>
-                                    </td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                </div>
+                {filteredApplications.length > 0 ? (
+                    <div className="space-y-4">
+                        {filteredApplications.map((app) => {
+                            const profile = profiles[app.userId._id || app.userId];
+                            return (
+                                <div key={app._id} className="bg-white p-4 rounded-lg shadow-md flex justify-between px-[100px] items-center space-x-4">
+                                    
+                                    <div className=" ">
+                                        <h2 className="text-xl font-bold">{profile?.fullName || 'N/A'}</h2>
+                                        <p className="text-gray-600"><span className="font-semibold">Experience:</span> {profile?.experience || 'N/A'}</p>
+                                          <p className="text-gray-600"><span className="font-semibold">Applied on:</span> {new Date(app.appliedDate).toLocaleDateString()}</p>
+                       
+                                    </div>
+                                    <div>
+                                    <p className="text-gray-600"><span className="font-semibold">Status:</span> {app.status}</p>
+                                        <p className="text-gray-600"><span className="font-semibold">Phone No:- {profile?.phoneNumber }</span></p>
+                                        <div className="mt-2">
+                                            <Link
+                                                to={`/admin/application/${app._id}`}
+                                                className="text-[#B1C000] hover:underline mr-4"
+                                            >
+                                                View Details
+                                            </Link>
+
+                                        </div>
+                                        </div>
+                                </div>
+                            );
+                        })}
+                    </div>
+                ) : (
+                    <p className="text-gray-600">No applications available.</p>
+                )}
             </div>
         </div>
     );
