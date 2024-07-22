@@ -191,7 +191,7 @@ const Footer = () => {
                 <li><Link>Cookie Policy</Link></li>
                 <li><Link>Privacy Policy</Link></li>
                 <li>
-                  <a href='../../public/pinnacleSitemap.pdf' target="_blank" rel="noreferrer">
+                  <a href='../../pinnacleSitemap.pdf' target="_blank" rel="noreferrer">
                     Sitemap
                     </a>
                 </li>
