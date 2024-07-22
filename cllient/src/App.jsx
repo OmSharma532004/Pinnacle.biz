@@ -31,7 +31,7 @@ const App = () => {
       // Load Google Analytics script
       (function() {
         var ga = document.createElement('script');
-        ga.src = 'https://www.googletagmanager.com/gtag/js?id=YOUR_TRACKING_ID';
+        ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-1PB9CQV093';
         document.head.appendChild(ga);
         ga.onload = function() {
           window.dataLayer = window.dataLayer || [];
