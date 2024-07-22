@@ -75,22 +75,12 @@ const Footer = () => {
     setErrors({});
   };
 
-  const downloadSitemap = () => {
-    const link = document.createElement('a');
-    link.href = '../../public/pinnacleSitemap.pdf';
-    link.download = 'pinnacleSitemap.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const redirectToSitemap = () => {
+    window.location.href = 'https://res.cloudinary.com/dtxejnbnw/image/upload/v1721674633/pinnacleSitemap_q1k9cm.pdf';
   };
 
-  const downloadBlogs = () => {
-    const link = document.createElement('a');
-    link.href = '../../public/Blogs.pdf';
-    link.download = 'Blogs.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const redirectToBlogs = () => {
+    window.location.href = 'https://res.cloudinary.com/dtxejnbnw/image/upload/v1721674646/Blogs_q6i2ty.pdf';
   };
 
   const SocialMedia = () => (
@@ -164,39 +154,39 @@ const Footer = () => {
           <div className='section flex flex-col items-center justify-center'>
             <h3 className='text-xl mb-4 text-[#B1C000]'>Quick Links</h3>
             <ul>
-              <li><Link>Home</Link></li>
-              <li><Link>About Us</Link></li>
-              <li><button onClick={downloadBlogs}>Blogs</button></li>
-              <li><Link>Contact Us</Link></li>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/about">About Us</Link></li>
+              <li><button onClick={redirectToBlogs}>Blogs</button></li>
+              <li><Link to="/contact">Contact Us</Link></li>
             </ul>
           </div>
           <div className='section flex flex-col items-center justify-center'>
             <h3 className='text-xl mb-4 text-[#B1C000]'>Legal</h3>
             <ul>
-              <li><Link>Disclaimer Policy</Link></li>
-              <li><Link>Cookie Policy</Link></li>
-              <li><Link>Privacy Policy</Link></li>
-              <li><button onClick={downloadSitemap}>Sitemap</button></li>
+              <li><Link to="/disclaimer">Disclaimer Policy</Link></li>
+              <li><Link to="/cookie-policy">Cookie Policy</Link></li>
+              <li><Link to="/privacy-policy">Privacy Policy</Link></li>
+              <li><button onClick={redirectToSitemap}>Sitemap</button></li>
             </ul>
           </div>
           <div className='section flex flex-col items-center justify-center'>
             <h3 className='text-xl mb-4 text-[#B1C000]'>Information</h3>
             <ul className='flex items-start justify-center gap-5'>
               <div>
-                <li><Link>Jobs in Delhi</Link></li>
-                <li><Link>Jobs in Gurugram</Link></li>
-                <li><Link>Jobs in Bengaluru</Link></li>
-                <li><Link>Jobs in Mumbai</Link></li>
-                <li><Link>Engineering Jobs</Link></li>
-                <li><Link>Product Jobs</Link></li>
-                <li><Link>Leadership Jobs</Link></li>
+                <li><Link to="/jobs/delhi">Jobs in Delhi</Link></li>
+                <li><Link to="/jobs/gurugram">Jobs in Gurugram</Link></li>
+                <li><Link to="/jobs/bengaluru">Jobs in Bengaluru</Link></li>
+                <li><Link to="/jobs/mumbai">Jobs in Mumbai</Link></li>
+                <li><Link to="/jobs/engineering">Engineering Jobs</Link></li>
+                <li><Link to="/jobs/product">Product Jobs</Link></li>
+                <li><Link to="/jobs/leadership">Leadership Jobs</Link></li>
               </div>
               <div>
-                <li><Link>Jobs in India</Link></li>
-                <li><Link>Jobs In Dubai</Link></li>
-                <li><Link>Jobs in Singapore</Link></li>
-                <li><Link>Jobs in North America</Link></li>
-                <li><Link>Jobs in London</Link></li>
+                <li><Link to="/jobs/india">Jobs in India</Link></li>
+                <li><Link to="/jobs/dubai">Jobs In Dubai</Link></li>
+                <li><Link to="/jobs/singapore">Jobs in Singapore</Link></li>
+                <li><Link to="/jobs/north-america">Jobs in North America</Link></li>
+                <li><Link to="/jobs/london">Jobs in London</Link></li>
               </div>
             </ul>
           </div>
