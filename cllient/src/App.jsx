@@ -7,6 +7,7 @@ import PinnacleSolutions from "./components/PinnacleSoultions";
 import MetaTags from './components/MetaTag';
 import CookieConsent from './components/CookieConsent/CookieConsent';
 import ApplicationFormPage from './components/JobFeed/JobApplicationDialog';
+import Hr360 from './Pages/Hr360/HR360';
 
 
 const LandingPage = lazy(() => import('./Pages/LandingPage/LandingPage'));
@@ -58,6 +59,7 @@ const App = () => {
         <Route path="/pinnacle-solutions" element={<PinnacleSolutions />} />
         <Route path="*" element={<Layout />} />
         <Route path="/apply/:jobId" element={<ApplicationFormPage />} /> {/* Add this route */}
+        <Route path="/hr360" element={<Hr360 />} />
        
        
 

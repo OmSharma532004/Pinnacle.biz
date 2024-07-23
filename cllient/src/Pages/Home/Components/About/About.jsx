@@ -40,7 +40,7 @@ const abouts = [
 const About2 = () => {
   return (
     <>
-      <h2 className='head-text -mt-[100px]'> <span>What You Can Expect:</span></h2>  
+      <h2 className='head-text '> <span>What You Can Expect:</span></h2>  
       <div className='app__profiles'>
         {abouts.map((about, index) => (
           <motion.div

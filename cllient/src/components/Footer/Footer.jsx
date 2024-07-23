@@ -155,9 +155,9 @@ const Footer = () => {
             <h3 className='text-xl mb-4 text-[#B1C000]'>Quick Links</h3>
             <ul>
               <li><Link to="/">Home</Link></li>
-              <li><Link to="/about">About Us</Link></li>
+              <li><Link to="/">About Us</Link></li>
               <li><button onClick={redirectToBlogs}>Blogs</button></li>
-              <li><Link to="/contact">Contact Us</Link></li>
+              <li><Link to="/">Contact Us</Link></li>
             </ul>
           </div>
           <div className='section flex flex-col items-center justify-center'>
