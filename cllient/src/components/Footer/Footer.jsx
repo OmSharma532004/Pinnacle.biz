@@ -120,7 +120,7 @@ const Footer = () => {
           <div className="right">
             {isSubmitted ? 
               <p className="successMessage">
-                Thank you for contacting us! <br /> We will get back to you shortly.
+                Thanks for contacting us! <br /> We will get back to you shortly.
               </p> 
               : (
                 <div className="contact-form">
