@@ -62,12 +62,12 @@ const Navbar = () => {
           <a href="#" className="hover:text-gray-600">Candidate</a>
           <ul className="absolute left-1/2 transform -translate-x-1/2 top-6 hidden group-hover:flex flex-col bg-white text-gray-800 shadow-lg rounded-md w-56">
             <li><a href="/jobs" className="block px-4 py-2 hover:bg-[#B1C000]">Job Board</a></li>
-            <li><a href="/signup" className="block px-4 py-2 hover:bg-[#B1C000]">Submit your CV</a></li>
+            <li><a href="/login" className="block px-4 py-2 hover:bg-[#B1C000]">Submit your CV</a></li>
           </ul>
         </li>
         <li><a href="/elevate" className="hover:text-gray-600">Elevate</a></li>
-        <li><a href="#about" className="hover:text-gray-600">About Us</a></li>
-        <li><a href="#contact" className="hover:text-gray-600">Contact</a></li>
+       <li><a href="#about" className="hover:text-gray-600">About Us</a></li>
+         <li><a href="#contact" className="hover:text-gray-600">Contact</a></li>
         {isLoggedIn ? (
           <>
             <li><a href="#" onClick={handleLogout} className="hover:text-gray-600">Logout</a></li>

@@ -95,6 +95,16 @@ const JobList = () => {
                             <option value="10+">10+ years</option>
                         </select>
                         <button onClick={handleFilterApply} className="border border-[#B1C000] p-2 rounded bg-[#B1C000] text-white">Filter</button>
+                        <button onClick={() => {
+                            setFilteredJobs(jobs)
+                            setFilter({
+                                date: '',
+                                location: '',
+                                experience: ''
+                            })
+                        }
+                        
+                        } className="border border-gray-300 p-2 rounded">Reset</button>
                     </div>
                 </div>
                 {filteredJobs.map((job) => (

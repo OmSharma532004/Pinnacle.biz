@@ -8,6 +8,8 @@ import MetaTags from './components/MetaTag';
 import CookieConsent from './components/CookieConsent/CookieConsent';
 import ApplicationFormPage from './components/JobFeed/JobApplicationDialog';
 import Hr360 from './Pages/Hr360/HR360';
+import BlogPage from './Pages/Blogs/Blogs';
+import WhatsAppButton from './components/WhatsAppButton/WhatsAppButton';
 
 
 const LandingPage = lazy(() => import('./Pages/LandingPage/LandingPage'));
@@ -49,6 +51,7 @@ const App = () => {
     <Suspense fallback={<div>Loading...</div>}>
       <MetaTags />
       <CookieConsent onConsent={handleConsent} />
+      <WhatsAppButton />
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/elevate" element={<Elevate />} />
@@ -60,6 +63,7 @@ const App = () => {
         <Route path="*" element={<Layout />} />
         <Route path="/apply/:jobId" element={<ApplicationFormPage />} /> {/* Add this route */}
         <Route path="/hr360" element={<Hr360 />} />
+        <Route path="/blogs" element={<BlogPage />} />
        
        
 

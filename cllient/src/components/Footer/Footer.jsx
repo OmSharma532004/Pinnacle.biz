@@ -154,10 +154,16 @@ const Footer = () => {
           <div className='section flex flex-col items-center justify-center'>
             <h3 className='text-xl mb-4 text-[#B1C000]'>Quick Links</h3>
             <ul>
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/">About Us</Link></li>
-              <li><button onClick={redirectToBlogs}>Blogs</button></li>
-              <li><Link to="/">Contact Us</Link></li>
+              <li><Link onClick={()=>{
+                window.scrollTo(0,0);
+              }} to="/">Home</Link></li>
+              <li><a href="#about" className="hover:text-gray-600">About Us</a></li>
+              <Link to="/blogs"
+              onClick={()=>{
+                window.scrollTo(0,0);
+              }}
+              >Blogs</Link>
+              <li><a href="#contact" className="hover:text-gray-600">Contact Us</a></li>
             </ul>
           </div>
           <div className='section flex flex-col items-center justify-center'>
@@ -173,20 +179,20 @@ const Footer = () => {
             <h3 className='text-xl mb-4 text-[#B1C000]'>Information</h3>
             <ul className='flex items-start justify-center gap-5'>
               <div>
-                <li><Link to="/jobs/delhi">Jobs in Delhi</Link></li>
-                <li><Link to="/jobs/gurugram">Jobs in Gurugram</Link></li>
-                <li><Link to="/jobs/bengaluru">Jobs in Bengaluru</Link></li>
-                <li><Link to="/jobs/mumbai">Jobs in Mumbai</Link></li>
-                <li><Link to="/jobs/engineering">Engineering Jobs</Link></li>
-                <li><Link to="/jobs/product">Product Jobs</Link></li>
-                <li><Link to="/jobs/leadership">Leadership Jobs</Link></li>
+                <li><Link to="/jobs">Jobs in Delhi</Link></li>
+                <li><Link to="/jobs">Jobs in Gurugram</Link></li>
+                <li><Link to="/jobs">Jobs in Bengaluru</Link></li>
+                <li><Link to="/jobs">Jobs in Mumbai</Link></li>
+                <li><Link to="/jobs">Engineering Jobs</Link></li>
+                <li><Link to="/jobs">Product Jobs</Link></li>
+                <li><Link to="/jobs">Leadership Jobs</Link></li>
               </div>
               <div>
-                <li><Link to="/jobs/india">Jobs in India</Link></li>
-                <li><Link to="/jobs/dubai">Jobs In Dubai</Link></li>
-                <li><Link to="/jobs/singapore">Jobs in Singapore</Link></li>
-                <li><Link to="/jobs/north-america">Jobs in North America</Link></li>
-                <li><Link to="/jobs/london">Jobs in London</Link></li>
+                <li><Link to="/jobs">Jobs in India</Link></li>
+                <li><Link to="/jobs">Jobs In Dubai</Link></li>
+                <li><Link to="/jobs">Jobs in Singapore</Link></li>
+                <li><Link to="/jobs">Jobs in North America</Link></li>
+                <li><Link to="/jobs">Jobs in London</Link></li>
               </div>
             </ul>
           </div>

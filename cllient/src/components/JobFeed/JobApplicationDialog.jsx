@@ -10,7 +10,7 @@ const ApplicationFormPage = () => {
     const { jobId } = useParams();
     const user = useSelector(state => state.auth.user);
     const [job, setJob] = useState(null);
-    const [coverLetter, setCoverLetter] = useState('');
+    const [coverLetter, setCoverLetter] = useState('Done');
     const [userProfile, setUserProfile] = useState(null);
     const [loading, setLoading] = useState(false);
     const [step, setStep] = useState(1); // Define step state
@@ -61,7 +61,7 @@ const ApplicationFormPage = () => {
             }, 2000);
         } catch (error) {
             
-            alert('Error submitting application:'+ error.response.data.message);
+            alert( error.response.data.message);
            
         }
     };
@@ -188,12 +188,15 @@ const ApplicationFormPage = () => {
                             Edit Profile
                         </button>
                     </Link>
-                    <button
-                        onClick={() => setStep(2)}
-                        className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-                    >
-                        Next
-                    </button>
+                    <div className="flex justify-end">
+                            <button
+                                type="submit"
+                                onClick={handleSubmit}
+                                className="bg-[#B1C000] text-white py-2 px-4 rounded hover:bg-[#9DA300] transition duration-200"
+                            >
+                                Apply
+                            </button>
+                        </div>
                 </div>
             </div>
             {step === 2 && (

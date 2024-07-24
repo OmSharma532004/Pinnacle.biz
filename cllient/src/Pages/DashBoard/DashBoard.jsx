@@ -308,7 +308,7 @@ const Dashboard = () => {
       <div className="fixed left-0">
         <Sidebar setCurrentView={setCurrentView} />
       </div>
-      <div className="w-full p-6 lg:ml-64">{renderContent()}</div>
+      <div className="w-full p-6 lg:ml-64">{<Profile/>}</div>
     </div>
   );
 };
