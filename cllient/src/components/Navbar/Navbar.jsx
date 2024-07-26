@@ -94,9 +94,9 @@ const Navbar = () => {
                     <ul className="bg-white text-gray-800 mt-2 w-full shadow-lg rounded-md">
                       <li><a href="/executive" className="block px-4 py-2 hover:bg-green-200">Executive Search</a></li>
                       <li><a href="/contingency" className="block px-4 py-2 hover:bg-green-200">Contingency Recruiting</a></li>
-                      <li><a href="#" className="block px-4 py-2 hover:bg-green-200">Contractual Hiring</a></li>
+                      <li><a href="/contractual" className="block px-4 py-2 hover:bg-green-200">Contractual Hiring</a></li>
                       <li><a href="/hr360" className="block px-4 py-2 hover:bg-green-200">HR360</a></li>
-                      <li><a href="#" className="block px-4 py-2 hover:bg-green-200">Research & Advisory</a></li>
+                      <li><a href="/research" className="block px-4 py-2 hover:bg-green-200">Research & Advisory</a></li>
                     </ul>
                   )}
                 </li>
