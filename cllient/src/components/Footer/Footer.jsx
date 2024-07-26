@@ -160,7 +160,8 @@ const Footer = () => {
               <li><a href="#about" className="hover:text-gray-600">About Us</a></li>
               <Link to="/blogs"
               onClick={()=>{
-                window.scrollTo(0,0);
+                window.location.href = "/blogs";
+                
               }}
               >Blogs</Link>
               <li><a href="#contact" className="hover:text-gray-600">Contact Us</a></li>

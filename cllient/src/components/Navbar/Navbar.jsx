@@ -53,9 +53,9 @@ const Navbar = () => {
           <ul className="absolute left-1/2 transform -translate-x-1/2 top-6 hidden group-hover:flex flex-col bg-white text-gray-800 shadow-lg rounded-md w-56">
             <li><a href="/executive" className="block px-4 py-2 hover:bg-[#B1C000]">Executive Search</a></li>
             <li><a href="/contingency" className="block px-4 py-2 hover:bg-[#B1C000]">Contingency Recruiting</a></li>
-            <li><a href="#" className="block px-4 py-2 hover:bg-[#B1C000]">Contractual Hiring</a></li>
+            <li><a href="/contractual" className="block px-4 py-2 hover:bg-[#B1C000]">Contractual Hiring</a></li>
             <li><a href="/hr360" className="block px-4 py-2 hover:bg-[#B1C000]">HR360</a></li>
-            <li><a href="#" className="block px-4 py-2 hover:bg-[#B1C000]">Research & Advisory</a></li>
+            <li><a href="/research" className="block px-4 py-2 hover:bg-[#B1C000]">Research & Advisory</a></li>
           </ul>
         </li>
         <li className="relative group">

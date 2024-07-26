@@ -26,10 +26,7 @@ const Hr360 = () => {
       <div className="mt-12"></div>
       <Header />
     
-      <section className=" flex flex-col md:mt-[100px] items-center justify-center">
-      <h2 className="md:text-5xl text-3xl md:-ml-[800px] text-blue-800 font-bold">Why Us</h2>
-            <About2 />
-          </section>
+      
       <main className="container mx-auto p-6">
         <div className="flex flex-col items-center justify-center space-y-12">
           <section className="bg-white p-6 rounded border-t-4 border-blue-800">
@@ -54,12 +51,16 @@ const Hr360 = () => {
             <blockquote className="mb-4 text-lg text-gray-800 ">
               "Game-changer for our startup! The exceptional services catapulted our growth and made a real impact." ~ Our client
             </blockquote>
-            <blockquote className="mb-4 text-lg text-gray-800 ">
+            <blockquote className=" text-lg text-gray-800 ">
               "The team is highly responsive and always there to assist us with any issues. Regular connects & engagements from their side have helped me drive 100% retention for my team in India." ~ Engineering Leader for India
             </blockquote>
           </section>
         </div>
       </main>
+      <section className=" flex flex-col mb-[40px] items-center justify-center">
+      <h2 className="md:text-5xl text-3xl md:-ml-[800px] text-blue-800 font-bold">Why Us</h2>
+            <About2 />
+          </section>
     
       
       <Footer />

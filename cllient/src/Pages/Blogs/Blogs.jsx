@@ -80,11 +80,12 @@ import Navbar from '../../components/Navbar/Navbar';
           </div>
         </section>
   
-        <section className="bg-white flex md:flex-row lg:flex-row mb-[40px] flex-col items-start justify-center w-[70%]">
+        <section className="bg-white mb-[50px] flex flex-col items-start justify-center w-[70%]">
+          <h2 className='md:text-4xl lg:text-4xl text-2xl font-bold text-gray-800 mb-[40px] '>Featured Blogs</h2>
           {blogs.map((blog, index) => (
             <div
               key={index}
-              className={`cursor-pointer border md:w-[400px] md:h-[200px]  lg:w-[400px] lg:h-[200px]  rounded-lg p-4 m-2 ${currentIndex === index ? 'bg-[#B1C000] text-white' : 'bg-gray-100'}`}
+              className={`cursor-pointer border  rounded-lg p-4 m-2 ${currentIndex === index ? 'bg-[#B1C000] text-white' : 'bg-gray-100'}`}
               onClick={() => handleBlogClick(index)}
             >
               <h2 className="text-lg font-semibold">{blog.title}</h2>
