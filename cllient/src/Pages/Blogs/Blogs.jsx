@@ -49,89 +49,52 @@ import Navbar from '../../components/Navbar/Navbar';
   ];
   
 
-const BlogPage = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const blog = blogs[currentIndex];
-
-  const handlePrev = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
-    }
-  };
-
-  const handleNext = () => {
-    if (currentIndex < blogs.length - 1) {
-      setCurrentIndex(currentIndex + 1);
-    }
-  };
-
-  return (
-    <div className="min-h-screen w-full  flex flex-col items-center justify-center p-4 mt-[100px]">
+  const BlogPage = () => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const blog = blogs[currentIndex];
+  
+    const handleBlogClick = (index) => {
+      setCurrentIndex(index);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+  
+    return (
+      <div className="min-h-screen w-full flex flex-col items-center justify-center p-4 mt-[100px]">
         <Navbar />
-        <div className="flex justify-between my-7 w-full  max-w-[70%] mt-8">
-        <button
-          onClick={handlePrev}
-          className={`px-4 py-2 rounded-lg ${currentIndex === 0 ? 'bg-gray-300' : 'bg-[#B1C000] text-white'}`}
-          disabled={currentIndex === 0}
-        >
-          Previous
-        </button>
-        <button
-          onClick={handleNext}
-          className={`px-4 py-2 rounded-lg ${currentIndex === blogs.length - 1 ? 'bg-gray-300' : 'bg-[#B1C000] text-white'}`}
-          disabled={currentIndex === blogs.length - 1}
-        >
-          Next
-        </button>
-      </div>
-      <header className="bg-white w-[70%] p-8 rounded-lg flex flex-col items-start gap-5 justify-center mb-8">
-        <div className="flex items-center justify-between mb-6">
-          <h1 className="md:text-5xl lg:text-5xl text-2xl  font-bold text-gray-800">{blog.title}</h1>
-        </div>
-        <p className="md:text-lg lg:text-lg texr-sm mb-4 text-gray-700">{blog.description}</p>
-        
-        <div className="header-buttons">
-          <a
-            rel="noreferrer"
-            className="bg-[#B1C000] text-white px-4 py-2 rounded-lg"
-            href="https://calendly.com/contact-pinnacle/book-a-meeting"
-          >
-            Get Started
-          </a>
-        </div>
-      
-      </header>
-
-      <section className="bg-white flex flex-col items-center justify-center p-8 rounded-lg ">
-      
-        <div className="flex mt-[50px] flex-col w-[70%] flex-wrap gap-6">
-          {blog.content.map((advantage, index) => (
-            <div key={index} className=" flex items-start justify-start flex-col p-6 rounded-lg shadow-sm">
-              <h2 className="md:text-xl lg:text-xl text-lg font-semibold text-[#B1C000] mb-2">{advantage.split(':')[0]}</h2>
-              <p className="md:text-lg lg:text-lg text-sm text-justify text-gray-700">{advantage.split(':')[1]}</p>
+         
+        <header className="bg-white md:w-[70%] p-8 rounded-lg flex flex-col items-start gap-5 justify-center">
+          <div className="flex items-center justify-between mb-6">
+            <h1 className="md:text-4xl lg:text-4xl text-2xl font-bold text-gray-800">{blog.title}</h1>
+          </div>
+          <p className="md:text-lg lg:text-lg text-sm mb-4 text-gray-700">{blog.description}</p>
+        </header>
+  
+        <section className="bg-white flex flex-col mb-[20px] items-center justify-center rounded-lg">
+          <div className="flex items-start gap-[10px]  justify-center flex-col w-[70%] flex-wrap">
+            {blog.content.map((advantage, index) => (
+              <div key={index} className="flex items-start justify-start flex-col rounded-lg  mb-4">
+                <h2 className="md:text-xl lg:text-xl text-lg font-semibold text-[#B1C000] mb-2">{advantage.split(':')[0]}</h2>
+                <p className="md:text-lg lg:text-lg text-sm text-justify text-gray-700">{advantage.split(':')[1]}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+  
+        <section className="bg-white flex md:flex-row lg:flex-row mb-[40px] flex-col items-start justify-center w-[70%]">
+          {blogs.map((blog, index) => (
+            <div
+              key={index}
+              className={`cursor-pointer border md:w-[400px] md:h-[200px]  lg:w-[400px] lg:h-[200px]  rounded-lg p-4 m-2 ${currentIndex === index ? 'bg-[#B1C000] text-white' : 'bg-gray-100'}`}
+              onClick={() => handleBlogClick(index)}
+            >
+              <h2 className="text-lg font-semibold">{blog.title}</h2>
             </div>
           ))}
-        </div>
-      </section>
-      <div className="flex justify-between my-9 w-full max-w-[70%] mt-8">
-        <button
-          onClick={handlePrev}
-          className={`px-4 py-2 rounded-lg ${currentIndex === 0 ? 'bg-gray-300' : 'bg-[#B1C000] text-white'}`}
-          disabled={currentIndex === 0}
-        >
-          Previous
-        </button>
-        <button
-          onClick={handleNext}
-          className={`px-4 py-2 rounded-lg ${currentIndex === blogs.length - 1 ? 'bg-gray-300' : 'bg-[#B1C000] text-white'}`}
-          disabled={currentIndex === blogs.length - 1}
-        >
-          Next
-        </button>
+        </section>
+  
+        <Footer />
       </div>
-      <Footer />
-    </div>
-  );
-};
-
-export default BlogPage;
+    );
+  };
+  
+  export default BlogPage;
