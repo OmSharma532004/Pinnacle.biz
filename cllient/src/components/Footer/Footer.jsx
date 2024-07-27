@@ -170,10 +170,21 @@ const Footer = () => {
           <div className='section flex flex-col items-center justify-center'>
             <h3 className='text-xl mb-4 text-[#B1C000]'>Legal</h3>
             <ul>
-              <li><Link to="/disclaimer">Disclaimer Policy</Link></li>
+              <li><Link to="/disclaimer"
+              onClick={()=>{
+                window.location.href = "/disclaimer";
+              }
+              }
+              >Disclaimer Policy</Link></li>
               <li><Link to="/cookie-policy">Cookie Policy</Link></li>
-              <li><Link to="/privacy-policy">Privacy Policy</Link></li>
-              <li><button onClick={redirectToSitemap}>Sitemap</button></li>
+              <li><Link to="/privacy"
+              onClick={()=>{
+                window.location.href = "/privacy";
+              }}
+              >Privacy Policy</Link></li>
+              <li><button onClick={()=>{
+                window.location.href = "/sitemap";
+              }}>Sitemap</button></li>
             </ul>
           </div>
           <div className='section flex flex-col items-center justify-center'>

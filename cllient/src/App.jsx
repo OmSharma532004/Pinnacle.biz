@@ -12,6 +12,9 @@ import BlogPage from './Pages/Blogs/Blogs';
 import WhatsAppButton from './components/WhatsAppButton/WhatsAppButton';
 import Contractual from './Pages/Contractual/ContractualHiring';
 import Research from './Pages/Research\'/ResearchAdv';
+import PrivacyPolicy from './Pages/Policies/Privacy';
+import DisclaimerPolicy from './Pages/Policies/Disclaimer';
+import Sitemap from './Pages/Policies/Sitemap';
 
 
 const LandingPage = lazy(() => import('./Pages/LandingPage/LandingPage'));
@@ -68,6 +71,9 @@ const App = () => {
         <Route path="/blogs" element={<BlogPage />} />
         <Route path="/contractual" element={<Contractual />} />
         <Route path="/research" element={<Research />} />
+        <Route path="/privacy" element={<PrivacyPolicy/>} />
+        <Route path="/disclaimer" element={<DisclaimerPolicy/>} />
+        <Route path="/sitemap" element={<Sitemap/>} />
 
        
        
