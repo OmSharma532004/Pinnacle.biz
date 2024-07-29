@@ -62,7 +62,7 @@ import Navbar from '../../components/Navbar/Navbar';
       <div className="min-h-screen w-full flex flex-col items-center justify-center p-4 mt-[100px]">
         <Navbar />
          
-        <header className="bg-white md:w-[70%] p-8 rounded-lg flex flex-col items-start gap-5 justify-center">
+        <header className="bg-white md:w-[74%] w-[83%]  p-8 rounded-lg flex flex-col items-start gap-5 justify-center">
           <div className="flex items-center justify-between mb-6">
             <h1 className="md:text-4xl lg:text-4xl text-2xl font-bold text-gray-800">{blog.title}</h1>
           </div>

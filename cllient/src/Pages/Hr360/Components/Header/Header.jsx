@@ -5,6 +5,7 @@ import { images } from "../../../../constants";
 import Typewriter from "typewriter-effect";
 import { Link } from 'react-router-dom';
 import anchor from "../../../../assets/anchor.png";
+import logo from "../../../../assets/logo.png";
 
 const scalevarients = {
   whileInView: {
@@ -27,9 +28,11 @@ const Header = () => {
       >       
         <header className="header">
           <div className="flex md:mt-8 lg:mt-8 items-center md:gap-[40px]">
-            <h1 className="headline text-blue-800 head-text">
-              HR360
-            </h1>
+            {/* <h1 className="headline text-blue-800 head-text">
+              HR
+            </h1> */}
+            <img src={logo} alt="logo" className="w-[300px] -ml-[60px]" />
+            
           </div>
           <h2 className=" head-text headline   text-blue-800 mb-8">Managing your superstars</h2>
           <p className="text-lg mb-6 text-black">
