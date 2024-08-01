@@ -193,8 +193,8 @@ module.exports.contactUs = async (req, res) => {
     const textMessage = `<p>Hello Admin,</p><p> <br> You have received a new query submission from the website. Here are the details:</p> <p> <br> Name: ${name}</p><p>Email: ${email}</p><p>Phone Number: ${phoneNumber}</p><p>Message: ${message}</p> <p> <br> <br> Please respond to the query as soon as possible.</p> <p> <br> Best regards,</p><p>Pinnacle Solutions</p><p>www.pinnacle.biz</p><p>Email: contact@pinnacle.biz</p>`;
 
     let body = {
-        from: `omsharma532004@gmail.com`,
-        to: `omsharma532004@gmail.com`,
+        from: process.env.EMAIL,
+        to: process.env.EMAIL,
         subject: `New Query Submission`,
         html: textMessage
     };
