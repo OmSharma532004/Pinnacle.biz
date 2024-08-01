@@ -180,8 +180,8 @@ module.exports.contactUs = async (req, res) => {
         port: 587,
         secure: false,
         auth: {
-          user: "omsharma532004@gmail.com",
-          pass: "rjvzraqvizjjarxw", // Consider using an App Password
+          user: process.env.EMAIL,
+          pass: process.env.PASSWORD, // Consider using an App Password
         },
         tls: {
           rejectUnauthorized: false,
