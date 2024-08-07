@@ -16,7 +16,6 @@ import PrivacyPolicy from './Pages/Policies/Privacy';
 import DisclaimerPolicy from './Pages/Policies/Disclaimer';
 import Sitemap from './Pages/Policies/Sitemap';
 
-
 const LandingPage = lazy(() => import('./Pages/LandingPage/LandingPage'));
 const Elevate = lazy(() => import('./Pages/Home/NewHome'));
 const JobFeed = lazy(() => import('./components/JobFeed/Jobfeed'));
@@ -40,13 +39,14 @@ const App = () => {
       // Load Google Analytics script
       (function() {
         var ga = document.createElement('script');
-        ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-1PB9CQV093';
+        ga.async = true;
+        ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-3G9RXDYB98';
         document.head.appendChild(ga);
         ga.onload = function() {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'YOUR_TRACKING_ID');
+          gtag('config', 'G-3G9RXDYB98');
         };
       })();
     }
@@ -71,13 +71,9 @@ const App = () => {
         <Route path="/blogs" element={<BlogPage />} />
         <Route path="/contractual" element={<Contractual />} />
         <Route path="/research" element={<Research />} />
-        <Route path="/privacy" element={<PrivacyPolicy/>} />
-        <Route path="/disclaimer" element={<DisclaimerPolicy/>} />
-        <Route path="/sitemap" element={<Sitemap/>} />
-
-       
-       
-
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/disclaimer" element={<DisclaimerPolicy />} />
+        <Route path="/sitemap" element={<Sitemap />} />
       </Routes>
     </Suspense>
   );
