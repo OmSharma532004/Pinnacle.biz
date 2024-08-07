@@ -1,5 +1,5 @@
 // src/App.js
-import React, { Suspense, lazy, useState } from 'react';
+import React, { Suspense, lazy, useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.scss';
 import Layout from "./Layout/Layout";
@@ -33,23 +33,31 @@ const NotFound = () => (
 const App = () => {
   const [cookieConsent, setCookieConsent] = useState(null);
 
+  useEffect(() => {
+    if (cookieConsent === 'all') {
+      // Load Google Analytics script
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-3G9RXDYB98';
+      document.head.appendChild(script);
+
+      script.onload = () => {
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-3G9RXDYB98');
+      };
+
+      return () => {
+        document.head.removeChild(script);
+      };
+    }
+  }, [cookieConsent]);
+
   const handleConsent = (consentType) => {
     setCookieConsent(consentType);
-    if (consentType === 'all') {
-      // Load Google Analytics script
-      (function() {
-        var ga = document.createElement('script');
-        ga.async = true;
-        ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-3G9RXDYB98';
-        document.head.appendChild(ga);
-        ga.onload = function() {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-3G9RXDYB98');
-        };
-      })();
-    }
   };
 
   return (
